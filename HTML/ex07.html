@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정의리스트</title>
+</head>
+<body>
+    <h4>일반적인 예시</h4>
+    <dl>
+        <dt>Java</dt>
+        <dd>자바 프로그래밍 언어</dd>
+        <dt>python</dt>
+        <dd>파이썬 프로그래밍 언어</dd>
+    </dl>
+    <hr>
+    <h4>좋은 예시</h4>
+<!-- 용어의 설명이 여러개인 경우-->
+    <dl>
+        <dt>development</dt>
+        <dd>1. 발달.성장</dd>
+        <dd>2. 개발, 신제품 개발</dd>
+    </dl>
+<!--같은 의미의 용어가 두개 이상인 경우-->
+    <dl>
+        <dt>위키백과</dt>
+        <dt>위키피디아</dt>
+        <dd>누구나 자요롭게 사용가능한 다언어판 인터넷 백과사전</dd>
+    </dl>
+<!--혼합 케이스-->
+    <dl>
+        <dt>위키백과</dt>
+        <dt>위키피디아</dt>
+        <dd>누구나 자요롭게 사용가능한 다언어판 인터넷 백과사전</dd>
+        <dd>
+        <a href="https://ko.wikipedia.org/wiki">위키피디아 사이트</a>
+        </dd>
+    </dl>
+
+<!--그룹화 가능-->
+    <dl>
+        <div>
+            <dt>사과</dt>
+            <dd>사과는 새콤하다</dd>
+        </div>
+            <div>
+            <dt>바나나</dt>
+            <dd>바나나는 달콤하다</dd>
+        </div>
+    </dl>
+    <hr>
+    <h4>나쁜예시</h4>
+    <dl>
+        <dt>HTML</dt>
+        <dd>html은 브라우저에서 해석하기 위한 언어이다.</dd>
+        <dt>CSS</dt> <!--dt를 설명할 dd 가 없는경우-->
+    </dl>
+    <dl>
+        <section> <!--dl태그의 자식 태그는 dd, dt, div 태그만 가능-->
+            <dt>사과</dt>
+            <dd>사과는 새콤하다</dd>
+        </div>
+            <div>
+            <dt>바나나</dt>
+            <dd>바나나는 달콤하다</dd>
+        </div>
+    </dl>
+
+    <dt>위키백과</dt> <!--dt나 dd 태그는 반드시 dl태그 내부에 존재해야 함-->
+</body>
+</html>
