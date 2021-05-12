@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식</title>
+</head>
+<body>
+    <form action="#" method="get"> <!--#은 나 자신-->
+        아이디: <input type="text" name ="userid" required value="Coke" disabled maxlength="10" minlength="4"> <br>
+        비밀번호: <input type="password" name ="userpwd" required placeholder="비밀번호를 입력하세요"><br>
+        <input type="submit" value= "로그인">
+        <input type="reset" value="다시 작성">
+        <input type="button" value="누르지 마세요." onclick="alert('누르지 말라니까!')"> 
+        <br>
+        성별: <input type="radio" name= "gender" value="male">  남 
+                <input type="radio" name= "gender" value="female" checked > 여 <br>
+        알레르기: <input type="checkbox" name = "allergy" value="flower">꽃가루 알레르기 
+                 <input type="checkbox" name = "allergy" value="peach">복숭아 알레르기
+                 <input type="checkbox" name = "allergy" value="cucumber">오이 알레르기
+                 <input type="checkbox" name = "allergy" value="crustacean">갑각류 알레르기 <br>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="checkbox" name = "allergy" value="pineapple">파인애플 알레르기
+                 <input type="checkbox" name = "allergy" value="pig">돼지 알레르기
+                 <input type="checkbox" name = "allergy" value="caw">소 알레르기
+                 <input type="checkbox" name = "allergy" value="dog">강아지 알레르기
+                 <input type="hidden" name="hidden1" value="pepsi">
+    <button type="submit">로그인2</button>
+    <button type="reset">다시작성 2</button>
+    <button type="button" onclick="alert('누르지 말라니까!')">누르지 마세요</button>
+
+    <br>
+    하고 싶은말<textarea name="content" cols="30" rows="10"></textarea>
+    </form>
+</body>
+</html>
