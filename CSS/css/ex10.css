@@ -1,0 +1,10 @@
+p:nth-child(2n+1){
+    color: red;
+    background-color: yellow;
+}
+[required]{/*required 속성을 가지고 있는지*/
+    height: 50px;
+}
+[name="bb"]{
+    background-color: turquoise;
+}

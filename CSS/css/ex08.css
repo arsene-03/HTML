@@ -1,0 +1,20 @@
+main p{
+    color:red
+}
+a:link{/*방문한 적이 없는 링크를 뜻함*/
+    color: royalblue;
+    font-weight: bold;
+}
+a:visited{/*방문한 적이 있는 링크*/
+    color: red;
+    font-size: 40px;
+}
+a:hover{/*마우스 커서가 올라갔을때 */
+    color:violet;
+    font-size: 70px;
+    text-decoration: none;
+}
+a:active{/*클릭했을때*/
+    color: yellowgreen;
+    text-decoration: overline;
+}

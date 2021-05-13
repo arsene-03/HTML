@@ -1,0 +1,28 @@
+*{
+    color: blue;
+    background-color: blanchedalmond;
+}
+h2{
+    color:red;
+    background-color: yellow;
+}
+ul{
+    color:green;
+}
+#newworld{
+    color: blueviolet;
+    background-color: cadetblue;
+}
+.myBestMovie{
+    color:cyan;
+    background-color: forestgreen;
+}
+.mytitle{
+    color: coral;
+    border-style: solid;
+    border-width: 5px;
+    border-color: blueviolet;
+}
+span,strong,b{
+    font-size: xx-large;
+}

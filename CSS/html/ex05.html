@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 적용 우선순위</title>
+    <link rel="stylesheet" href="../css/ex05.css">
+    <style>
+        p{
+            color: pink;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS 적용 우선순위</h2>
+    <!--
+        1순위 인라인 스타일시트
+        2순위 내부 스타일시트
+        3순위 외부 스타일시트
+        4순위 브라우져 기본 스타일시트
+
+    -->
+    <p style="color: purple; background-color: lightblue;">안녕하세요</p>
+</body>
+</html>
