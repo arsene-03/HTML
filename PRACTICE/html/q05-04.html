@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본속성 문제4</title>
+    <link rel="stylesheet" href="../css/q05-04.css">
+</head>
+<body>
+    <h1>myHomePage</h1>
+    <img src="../img/person.jpg" alt="최학준사진">
+    <p>개발자를 꿈꾸며 열심히 공부하는 <em>최학준</em>입니다.</p>
+    <ol>
+        <li>
+            현재 학습하는 과목
+            <ul>
+                <li><table><tr><td id="html">HTML</td></tr></table></li>
+                <li><table><tr><td id="css">CSS</td></tr></table></li>
+                <li><table><tr><td id="js">Javascript</td></tr></table></li>
+            </ul>
+        </li>
+        <li>
+            이번 학기 시간표
+            <table id="timetable">
+                <tr>
+                    <th></th>
+                    <th>월요일</th>
+                    <th>화요일</th>
+                    <th>수요일</th>
+                    <th>목요일</th>
+                </tr>
+                <tr>
+                    <td>1교시</td>
+                    <td colspan="2" id="html">HTML</td>
+                    <td>공강</td>
+                    <td rowspan="2" id="js">Javascript</td>
+                </tr>
+                <tr>
+                    <td>2교시</td>
+                    <td>공강</td>
+                    <td colspan="2" id="css">CSS</td>
+                </tr>
+            </table>
+        </li>
+    </ol>
+</body>
+</html>

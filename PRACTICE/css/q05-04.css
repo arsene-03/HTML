@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@300&display=swap');
+
+h1{
+    font-family: 'Black Han Sans', sans-serif;
+    text-align: center;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+p em{
+    color: blue;
+    font: italic;
+    font-weight: bolder;
+    font-size: 150%;
+}
+ol{
+    list-style: upper-roman;
+}
+ul{
+    list-style: square;
+}
+#html{
+    color: rebeccapurple;
+    background-color: rgba(238, 130, 238, 0.377);
+    width: 100px;
+    font-weight: bolder;
+    
+}
+#css{
+    color:tomato;
+    background-color: rgba(238, 182, 130, 0.5);
+    width: 100px;
+    font-weight: bolder;
+}
+#js{
+    color: turquoise;
+    background-color: rgba(26, 98, 107, 0.795);
+    width: 100px;
+    font-weight: bolder;
+}
+table{
+    border-collapse: collapse;
+}
+#timetable *{
+    border: gray 1px solid;
+}
+#timetable th{
+    color: whitesmoke;
+    background: black;
+    font-family: 'Black Han Sans', sans-serif;
+}
+#timetable #js{
+    width: 50px;
+}

@@ -1,0 +1,18 @@
+table{
+    text-align: center;
+}
+th,td{
+    border: 1px dotted black
+}
+th:first-child{
+    width: 150px;
+}
+th:last-child{
+    width: 400px;
+}
+tr :first-child{
+    background-color: yellow;
+}
+tr :last-child{
+    background-color: turquoise;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1.a{
+            direction: lir;
+            text-align: center; /*가운데정렬*/
+            text-decoration: underline; /*밑줄*/
+            text-shadow: 5px 5px 5px red; /*가로,세로,늘어짐,색*/
+            letter-spacing: normal; /*자간 크기*/
+            
+        }
+        h1.b{
+            direction: rtl; /*한글은 반대로쓰는게 없어서 제대로쓰이고 . 은 왼쪽에 찍힘*/
+            text-align: right;
+            text-decoration: overline;
+            letter-spacing: 0.4em;
+            
+        }
+        h1.c{
+            direction: lir; 
+            text-align: left;
+            text-decoration: line-through;
+            letter-spacing: -0.4em;
+        }
+        p.d{
+            text-indent: 50px; /*들여쓰기*/
+        }
+        p.e{
+            text-indent: -30px;
+        }
+        p.f{
+            font-size: 30px;
+            text-transform: lowercase; /*전부다 소문자*/
+            text-transform: uppercase; /*전부다 대문자*/
+            text-transform: capitalize; /*첫글자 대문자 나머지 소문자*/
+            line-height: 1.7; /*행간 높이*/
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="a">안녕하세요.</h1>
+    <h1 class="b">반갑습니다.</h1>
+    <h1 class="c">안녕히 가세요.</h1>
+    <hr>
+    <p class="d">안녕안녕</p>
+    <p class="e">반갑반갑</p>
+    <p class="f">Hello World</p>
+    
+</body>
+</html>

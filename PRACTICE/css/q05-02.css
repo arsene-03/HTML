@@ -1,0 +1,20 @@
+table{
+    text-align: center;
+}
+th,td{
+    border: 1px dotted black;
+}
+th{
+    border-collapse: separate;
+    background-color: blue;
+    color: whitesmoke;
+}
+tr:nth-child(2n+1){
+    background-color: yellow;
+}
+th:first-child{
+    width: 150px;
+}
+th:last-child{
+    width: 400px;
+}

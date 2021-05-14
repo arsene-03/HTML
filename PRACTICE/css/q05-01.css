@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Pen+Script&family=Sunflower:wght@300&display=swap');
+h1,h2{
+    color: yellowgreen;
+    font-size: 25pt;
+    font-family: 'Nanum Pen Script', cursive;
+}
+strong, em{
+    color: orange;
+    font-size: 15pt;
+    font-style: italic;
+    font-family: 'Sunflower', sans-serif;
+}
+li ul li{
+    color: orangered;
+    font-size: 18pt;
+    font-weight: bold;
+    font-family: 'Sunflower', sans-serif;
+}
