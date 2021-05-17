@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .wrap{
+            width: 100%; /*부모크기의 최대 크기*/
+            height: 100vh; /*뷰 포트의 높이*/
+            background-color: yellowgreen;
+        }
+        li::before{
+            content: "💔";
+        }
+        li::after{
+            content: "🈲";
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </ul>
+
+    </div>
+</body>
+</html>

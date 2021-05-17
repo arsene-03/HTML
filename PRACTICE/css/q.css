@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.parent{
+    background-color: rgba(0, 0, 0, 0.514);
+    width:700px;
+    
+}
+.child{
+    width: 124px;
+    height: 240px;
+    background-color: red;
+    float: left;
+    margin: 0;
+}
+.img{
+    float: right;
+}
+.textbox{
+    background-color: black;
+    color: white;
+    font-size: 10px;
+}
+.A{
+    float: left;
+    text-align: left;
+}
+.B{
+    text-align: right;
+    color: red;
+}

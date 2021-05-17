@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            box-sizing: border-box;
+            margin: 0;
+            
+        }
+        .parent{
+            width: 400px;
+            background-color: gray;
+            margin: 0 auto;
+
+        }
+        .parent::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            color: black;
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 200px;
+        }
+        .orange{
+            background-color: orange;
+            float: left;
+            
+        }
+        .yellow{
+            background-color: yellow;
+            float: left;
+            
+        }
+        .green{
+            background-color: green;
+            float:left
+            
+        }
+        .clear{
+            clear: both;
+        }
+        .other{
+            background-color: black;
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        
+            <div class="child orange">
+                childBox
+            </div>
+            <div class="child yellow">
+                childBox
+            </div>
+            <div class="child green">
+                childBox
+            </div>        
+    </div>
+    <div class="other">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur iure ducimus molestiae perspiciatis ratione magnam repudiandae ullam quod iste dolorum eius, natus nihil totam illum a inventore maxime consequuntur libero.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas magni odit qui non eius quisquam dolore facere quaerat totam labore ex omnis illo tenetur assumenda accusamus, ratione reprehenderit sint iste?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, obcaecati impedit provident dolor enim autem rerum nam, corporis officiis minus alias architecto molestiae fugit excepturi eius, debitis tempore? Possimus, deserunt.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad doloremque laudantium illum? Itaque quae labore id sint? Vitae facere, veritatis harum veniam, nostrum accusamus eum provident tempora quaerat eos voluptates!
+
+    </div>
+        
+</body>
+</html>

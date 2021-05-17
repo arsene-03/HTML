@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.parentBox{
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -100px;
+
+}
+.child{
+    width: 100px;
+    height: 100px;
+
+}
+.blueBox{
+    background-color: blue;
+    position: absolute;
+    top:-50px;
+    left:-50px;
+}
+.orangeBox{
+    background-color: orange;
+    position: absolute;
+    top:-50px;
+    right:-50px;
+}
+.purpleBox{
+    background-color: purple;
+    position: absolute;
+    bottom:-50px;
+    right:-50px;
+}
+.greenBox{
+    background-color: green;
+    position: absolute;
+    bottom:-50px;
+    left:-50px;
+}

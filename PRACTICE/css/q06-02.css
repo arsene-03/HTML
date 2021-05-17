@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.parent{
+    background-color: rgba(0, 0, 0, 0.514);
+    width:auto;
+    height: auto;
+    display: inline-block;
+}
+ol{
+    padding: 3px;
+    color: white;
+    
+}
+li{
+    display: inline-block;
+}
+#textbox{
+    background-color: black;
+    margin-top: 0;
+    font-size: 1px;
+    padding-top: 0;
+    width: auto;  
+    border: yellow solid;
+}
+#y{
+    text-align: left;
+    width: 50%;
+    display: inline;
+}
+
+strong{
+    text-align: right;
+    color: red;
+    width: -50%;
+}
