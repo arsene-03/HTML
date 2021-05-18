@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox1</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .parent{
+            margin: 0,auto;
+            width:1000px;
+            height: 1000px;
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .child{
+            width: 300px;
+            height: 300px;
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 300px;
+        }
+        .orange{
+            background-color: orange;
+            order: 2;
+        }
+        .yellowgreen{
+            background-color: yellowgreen;
+            order: 3;
+        }
+        .green{
+            background-color: green;
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child orange">FlexItem1</div>
+        <div class="child yellowgreen">FlexItem2</div>
+        <div class="child green">FlexItem3</div>
+    </div>
+</body>
+</html>

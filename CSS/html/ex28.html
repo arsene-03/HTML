@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리1</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .box{
+            width:100%;
+            height: 100vh;
+            background-color: red;
+            font-size: 30px;
+            font-weight: 700;
+            color: white;
+            text-align: center;
+            line-height: 100vh;
+        }
+        .box::after{
+            content: "Mobile";
+        }
+        @media screen and (min-width:576px){
+            .box{
+                background-color: orange;
+            }
+            .box::after{
+                content: "Landscape Phone";
+            }
+        }
+        @media screen and (min-width:786px) and (max-width:991px) {
+            .box{
+                background-color: yellow;
+            }
+            .box::after{
+                content: "Tablet";
+            }  
+        }
+        @media screen and (min-width:992px) {
+            .box{
+                background-color: yellowgreen;
+            }
+            .box::after{
+                content: "Laptop";
+            }  
+        }
+        @media screen and (min-width:1266px) {
+            .box{
+                background-color: green;
+            }
+            .box::after{
+                content: "Desktop";
+            }
+        }
+        @media screen and (min-width:1400px) {
+            .box{
+                background-color: blueviolet;
+            }
+            .box::after{
+                content: "LargeDesktop";
+            }    
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    </div>
+</body>
+</html>

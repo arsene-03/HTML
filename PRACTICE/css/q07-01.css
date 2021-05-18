@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+a:hover div{
+    background-color: rgba(47, 67, 110, 147);
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+a div{
+    margin: 3px 0;
+    height: 34px;
+}
+#header{
+    height: 90px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+#nav1{
+    height: 40px;
+    color: whitesmoke;
+    background-color: rgba(35, 47, 70, 146);
+    line-height: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    font-weight: 300; 
+    font-size: 12px;  
+}
+#nav1 ul{
+    display: inline;
+    padding: 0;
+}
+#nav1 ul li{
+    display: inline;
+    float: left;
+    height: 40PX;
+    margin: 0;
+    padding: 0px 12px;
+}
+#opgg{
+    font-size: 20px;
+    font-weight: 600;
+    background-color: rgba(83, 130, 232, 147);;
+}
+
+#nav2{
+    background-color: rgba(83, 130, 232, 147);
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: whitesmoke;
+    font-weight: 300;
+    font-size: 15px;
+}
+#nav2 ul{
+    display: inline;
+    margin-left: 70px;
+}
+#nav2 ul li{
+    display: inline;
+    margin-left: 24px; 
+}
+.searchbox{
+    margin-right: 70px;
+    background-color: white;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    width: 340px;
+}
+.searchbox *{
+    border:none; 
+}
+#lan{
+    background-color: rgba(236, 242, 255, 147);
+    width: 55px;
+    height: 35px;
+    text-align: center;
+    border-radius: 5px 0px 0px 5px;
+    color: rgba(83, 130, 232, 147);
+    padding-left: 5px; 
+}
+#searchPlayer{
+    border-radius: 0;
+    padding-left: 10px;
+    width: 250px;
+}
+#searchSumit{
+    color: rgba(83, 130, 232, 147);
+    text-align: center;
+    font-weight: 700;
+    background-color: white;
+    font-size: 18px;
+}
+#nav3{
+    height: 50px;
+    background-color: rgba(117, 117, 117, 160);
+    line-height: 50px;
+    color: whitesmoke;
+    font-weight: 500;
+    font-size: 12px;
+}
+#nav3 ul{
+    display: inline;
+    margin-left: 70px;
+}
+#nav3 ul li{
+    display: inline;
+}
