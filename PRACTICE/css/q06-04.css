@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+fieldset{
+    border: none;
+}
+
+.movie img{
+    margin-right: 10px;
+    float: left;
+}
+.textbox{
+    font-size: 13px;
+    color: rgb(78, 78, 78);
+}
+.parent{
+    width:700px;
+    height: auto;
+    position: fixed;
+    padding: 5px;
+}
+.child{
+    width:110px;
+    height: auto;
+    float: left;
+    margin: 5px;
+}
+h5{
+    line-height: 15px;
+}
+.child div{
+    font-size: 10px;
+}
+#text1{
+    text-align: left;
+    float: left;
+}
+.boxOffice h4{
+    float: left;
+}
+#accrueViewer{
+    color: gray;
+    font-size: 7px;
+}

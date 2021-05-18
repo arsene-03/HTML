@@ -4,34 +4,30 @@
 }
 .parent{
     background-color: rgba(0, 0, 0, 0.514);
-    width:auto;
+    width:700px;
     height: auto;
-    display: inline-block;
-}
-ol{
-    padding: 3px;
-    color: white;
-    
-}
-li{
-    display: inline-block;
-}
-#textbox{
-    background-color: black;
-    margin-top: 0;
-    font-size: 1px;
-    padding-top: 0;
-    width: auto;  
-    border: yellow solid;
-}
-#y{
-    text-align: left;
-    width: 50%;
-    display: inline;
+    position: fixed;
+    padding: 5px;
 }
 
-strong{
-    text-align: right;
+.child{
+    background-color: black;
+    width:127px;
+    height: 200px;
+    float: left;
+    margin: 5px;
+    
+
+}
+.child div{
+    color: white;
+    font-size: 10px;
+}
+#text1{
+    text-align: left;
+    float: left;
+}
+#per{
     color: red;
-    width: -50%;
+    text-align: right;
 }
