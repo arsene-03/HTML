@@ -2,58 +2,111 @@
     box-sizing: border-box;
     margin: 0;
 }
-a:hover div{
-    background-color: rgba(47, 67, 110, 147);
-    border-radius: 5px;
-}
 a{
+    color: #c3cbd1;
     text-decoration: none;
-    color: whitesmoke;
 }
-a div{
-    margin: 3px 0;
-    height: 34px;
+body{
+    background-color: #5383e8;
 }
-#header{
+
+.header{
     height: 90px;
-    background-color: black;
+    background-color: rgb(44, 38, 64);
     display: flex;
     justify-content: center;
 }
-#nav1{
+.header a img{
+    height: 90px;
+}
+
+.nav1{
     height: 40px;
-    color: whitesmoke;
-    background-color: rgba(35, 47, 70, 146);
+    background-color: #232f46;
     line-height: 40px;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: whitesmoke;
     font-weight: 300; 
     font-size: 12px;  
+    flex-wrap: wrap;
 }
-#nav1 ul{
-    display: inline;
+.nav1 ul{
     padding: 0;
 }
-#nav1 ul li{
+.nav1 ul li{
     display: inline;
     float: left;
     height: 40PX;
     margin: 0;
     padding: 0px 12px;
 }
-#opgg{
-    font-size: 20px;
-    font-weight: 600;
-    background-color: rgba(83, 130, 232, 147);;
+.nav1 a div{
+    margin: 3px 0;
+    height: 34px;
+    line-height: 34px;
+    padding-right: 6px;
+}
+.nav1 a:hover div{
+    background-color: rgba(47, 67, 110, 147);
+    border-radius: 5px;
 }
 
-#nav2{
-    background-color: rgba(83, 130, 232, 147);
-    height: 50px;
+.other img{
+    margin: 6px;
+    height: 24px;
+    width: 24px;
+    float:left ;
+    line-height: 34px;
+    
+}
+.nav1 #opgg{
+    background-color: #5383e8;
+}
+.nav1 #opgg img{
+    width: 65px;
+    height: 16px;
+}
+.nav1 #lol{
+    background-color: #5383e8;
+    color: whitesmoke;
+}
+.lanLogin{
+    position: relative;
+    bottom: 8px;
+}
+#lan{
+    background-color: #232f46;
+    border: none;
+    color: #c3cbd1;
+    font-size: 13px;
+    font-weight: 400;
+}
+.lanLogin img{
+    margin: 6px;
+    height: 24px;
+    width: 24px;
+    float:left ;
+    line-height: 34px;
+}
+#login{
+    display: inline-block;
+    padding: 0 16px;
+    border: none;
+    border-radius: 4px;
+    line-height: 26px;
+    font-size: 12px;
+    letter-spacing: -0.5px;
+    color: #fff;
+    background: #5383e8;
+    text-decoration: none;
+    margin: 7px 20px 7px 0px;
+}
+
+.nav2{
+    height: 48px;
     line-height: 50px;
     position: relative;
     display: flex;
@@ -63,42 +116,76 @@ a div{
     color: whitesmoke;
     font-weight: 300;
     font-size: 15px;
+    flex-wrap: wrap;
+    margin: 0px 100px;
 }
 #nav2 ul{
     display: inline;
-    margin-left: 70px;
 }
-#nav2 ul li{
+.nav2 ul li{
     display: inline;
+    float: left;
     margin-left: 24px; 
+    height: 48px;
 }
-.searchbox{
-    margin-right: 70px;
-    background-color: white;
-    height: 35px;
+#home{
+    border-bottom: solid whitesmoke 2px;
+}
+#home div{
+    color: whitesmoke;
+}
+
+.nav2 li:hover {   
+    border-bottom: solid whitesmoke 2px;
+    color: whitesmoke;
+}
+.nav2 a:hover{
+    color: whitesmoke;
+}
+.nav2 .other:nth-child(3) a{
+    color: turquoise;
+}
+.nav2 .other:nth-child(4) a{
+    color: turquoise;
+}
+.nav3{
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 40px;
+    color: whitesmoke;
+    font-weight: 500;
+    font-size: 12px;
     display: flex;
-    justify-content: space-between;
+}
+.nav3 ul{
+    display: inline;
+    margin-left: 291px;
+}
+.nav3 ul li{
+    display: inline;
+}
+#section{
+    width: 1080px;
+    position: relative;
+    display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
-    border-radius: 5px;
-    width: 340px;
+    margin: 143px;
 }
-.searchbox *{
-    border:none; 
+@media screen and (min-width: 1400px){
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
 }
-#lan{
-    background-color: rgba(236, 242, 255, 147);
-    width: 55px;
-    height: 35px;
-    text-align: center;
-    border-radius: 5px 0px 0px 5px;
-    color: rgba(83, 130, 232, 147);
-    padding-left: 5px; 
+#section img{
+    margin: 0 375px;
 }
+
 #searchPlayer{
     border-radius: 0;
     padding-left: 10px;
-    width: 250px;
+    width: 624px;
+    
 }
 #searchSumit{
     color: rgba(83, 130, 232, 147);
@@ -106,19 +193,4 @@ a div{
     font-weight: 700;
     background-color: white;
     font-size: 18px;
-}
-#nav3{
-    height: 50px;
-    background-color: rgba(117, 117, 117, 160);
-    line-height: 50px;
-    color: whitesmoke;
-    font-weight: 500;
-    font-size: 12px;
-}
-#nav3 ul{
-    display: inline;
-    margin-left: 70px;
-}
-#nav3 ul li{
-    display: inline;
 }

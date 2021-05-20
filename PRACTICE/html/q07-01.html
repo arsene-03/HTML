@@ -3,60 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1190, initial-scale=1.0">
     <title>플렉스박스 문제1</title>
-    <link rel="stylesheet" href="../css/q07-01.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/q07-01.css"> 
 </head>
 <body>
-    <form action="#" method="get">
-        <div id="header">
-            <img src="../img/banner.jpg" alt="banner">
+        <div class="header">
+            <a href="https://duo.lol/"><img src="../img/banner.jpg" alt="banner"></a>
         </div>
-        <div id="nav1">
+        <div class="nav1">
             <ul>
-                <li id="opgg"><a href="">op.gg</a></li>
-                <li><a href=""><div>리그오브레전드</div>
+                <li id="opgg"><a href="https://www.op.gg/"><img src="../img/www.op.gg_.png" alt="로고"></a></li>
+                <li id="lol"><div >리그오브레전드</div></li>
+                <li class="other"><a href="https://pubg.op.gg/"><div><img src="../img/battle.png" alt="icon">배틀그라운드</div>
                     </a></li>
-                <li><a href="">배틀그라운드</a></li>
-                <li><a href="">오버워치</a></li>
-                <li><a href="">포트나이트</a></li>
-                <li><a href="">레인보우식스 시즈</a></li>
-                <li><a href="">톡피지지</a></li>
-                <li><a href="">NEXT</a></li>
-                <li><a href="">데스트톱</a></li>
-                <li><a href="">aggro</a></li>
+                <li class="other"><a href="https://overwatch.op.gg/"><div><img src="../img/over.png" alt="icon">오버워치</div>
+                    </a></li>
+                <li class="other"><a href="https://fortnite.op.gg/"><div><img src="../img/fort.png" alt="icon">포트나이트</div>
+                    </a></li>
+                <li class="other"><a href="https://r6.op.gg/"><div><img src="../img/rainbow.png" alt="icon">레인보우식스 시즈</div>
+                    </a></li>
+                <li class="other"><a href="https://r6.op.gg/"><div><img src="../img/talkgg.png" alt="icon">톡피지지</div>
+                    </a></li>
+                <li class="other"><a href="https://next.op.gg/"><div><img src="../img/next.png" alt="icon">NEXT</div>
+                    </a></li>
+                <li class="other"><a href="http://op.gg/desktop/"><div><img src="../img/tesk.png" alt="icon">데스트톱</div>
+                    </a></li>
+                <li class="other"><a href="https://aggro.op.gg/"><div><img src="../img/aggro.png" alt="icon">aggro</div>
+                    </a></li>
             </ul>
-        </div>
-        <div id="nav2">
-            <ul>
-                <li><a href="">#집에있자</a></li>
-                <li><a href="">챔피언분석</a></li>
-                <li><a href="">칼바람</a></li>
-                <li><a href="">우루프</a></li>
-                <li><a href="">통계</a></li>
-                <li><a href="">랭킹</a> </li>
-                <li><a href="">프로관전</a></li>
-                <li><a href="">멀티서치</a></li>
-                <li><a href="">OP셜</a></li>
-                <li><a href="">커뮤니티</a></li>
-            </ul>
-            <div class="searchbox">
+            <div class="lanLogin">
+                <img src="../img/langicon.png" alt="lngicon">
                 <select name="lan" id="lan">
-                <option value="kr">KR</option>
-                <option value="ch">CH</option>
-                <option op=""></op</option>
-                <input type="text" name="searchPlayer" id="searchPlayer" placeholder="소환사명, 소환사명, ...">
-                <input type="submit" id="searchSumit" value=".GG" >
-                
+                    <option value="한국어">한국어</option>
+                    <option value="중국어">중국어</option>
+                    <option value="영어">영어</option>
+                    <option value="일본어">일본어</option>
+                </select>
+                <button type="submit" id="login">로그인</button>
             </div>
         </div>
-        <div id="nav3">
+        <div class="nav2">
+            <ul>
+                <li id="home"><a href="https://www.op.gg/"><div >#집에있자</div></a></li>
+                <li class="other"><a href="https://www.op.gg/champion/statistics"><div>챔피언분석</div></a></li>
+                <li class="other"><a href="https://www.op.gg/aram/statistics"><div>칼바람</div></a></li>
+                <li class="other"><a href="https://www.op.gg/urf/statistics"><div>우루프</div></a></li>
+                <li class="other"><a href="https://www.op.gg/statistics/champion/"><div>통계</div></a></li>
+                <li class="other"><a href="https://www.op.gg/ranking/ladder/"><div>랭킹</div></a> </li>
+                <li class="other"><a href="https://www.op.gg/spectate/pro/"><div>프로관전</div></a></li>
+                <li class="other"><a href="https://www.op.gg/multi/query="><div>멀티서치</div></a></li>
+                <li class="other"><a href="https://news.op.gg/"><div>OP셜</div></a></li>
+                <li class="other"><a href="https://talk.op.gg/s/lol/all?sort=popular"><div>커뮤니티</div></a></li>
+            </ul>        
+        </div>
+        <div class="nav3">
             <ul>
                 <li>
-                    아직도 매번 직접 룬세팅 하니? 자동 룬세팅은 [OP.GG for Desktop]
+                    <a href="http://op.gg/desktop/"></a> 아직도 매번 직접 룬세팅 하니? 자동 룬세팅은 [OP.GG for Desktop]
                 </li>
             </ul> 
         </div>
-    </form>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="section">
+                    <img src="../img/main.png" alt="메인그림">
+                    <input type="text" name="searchPlayer" id="searchPlayer" placeholder="소환사명, 소환사명, ...">
+                    <input type="submit" id="searchSumit" value=".GG" > 
+                    <div>
+
+                            <div>광고</div>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+
+                    </div>      
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul>
+                <li><a href="">About OP.GG</a></li>
+                <li><a href="">로고 히스토리</a></li>
+                <li><a href="">개인정보처리방법</a></li>
+                <li><a href="">도움말</a></li>
+                <li><a href="">제휴</a></li>
+                <li><a href="">문의</a></li>
+                <li><a href="">채용</a> </li>
+            </ul>
+            <div class="copyright">
+                <p>
+                © 2012-2021 OP.GG. OP.GG isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+                </p>
+                <a href=""><img src="" alt="트위터"></a>
+                <a href=""><img src="" alt="인스타그램"></a>
+                <a href=""><img src="" alt="페이스북"></a>
+            </div>
+        </div>
 </body>
 </html>
