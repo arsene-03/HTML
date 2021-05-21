@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=1190, initial-scale=1.0">
+    <meta name="viewport" content="width=1190px, initial-scale=1.0">
     <title>플렉스박스 문제1</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="../css/q07-01.css"> 
 </head>
 <body>
@@ -24,17 +24,17 @@
                     </a></li>
                 <li class="other"><a href="https://r6.op.gg/"><div><img src="../img/rainbow.png" alt="icon">레인보우식스 시즈</div>
                     </a></li>
-                <li class="other"><a href="https://r6.op.gg/"><div><img src="../img/talkgg.png" alt="icon">톡피지지</div>
+                <li class="other"><a href="https://r6.op.gg/"><div><img src="../img/talkpgg.png" alt="icon">톡피지지</div>
                     </a></li>
                 <li class="other"><a href="https://next.op.gg/"><div><img src="../img/next.png" alt="icon">NEXT</div>
                     </a></li>
-                <li class="other"><a href="http://op.gg/desktop/"><div><img src="../img/tesk.png" alt="icon">데스트톱</div>
+                <li class="other"><a href="http://op.gg/desktop/"><div><img src="../img/desk.png" alt="icon"><div id="beta">Beta</div>데스트톱</div>
                     </a></li>
                 <li class="other"><a href="https://aggro.op.gg/"><div><img src="../img/aggro.png" alt="icon">aggro</div>
                     </a></li>
             </ul>
             <div class="lanLogin">
-                <img src="../img/langicon.png" alt="lngicon">
+                <img src="../img/lan.jpg" alt="lngicon">
                 <select name="lan" id="lan">
                     <option value="한국어">한국어</option>
                     <option value="중국어">중국어</option>
@@ -44,6 +44,7 @@
                 <button type="submit" id="login">로그인</button>
             </div>
         </div>
+
         <div class="nav2">
             <ul>
                 <li id="home"><a href="https://www.op.gg/"><div >#집에있자</div></a></li>
@@ -61,54 +62,287 @@
         <div class="nav3">
             <ul>
                 <li>
-                    <a href="http://op.gg/desktop/"></a> 아직도 매번 직접 룬세팅 하니? 자동 룬세팅은 [OP.GG for Desktop]
+                    <a href="http://op.gg/desktop/">아직도 매번 직접 룬세팅 하니? 자동 룬세팅은 [OP.GG for Desktop]</a>
                 </li>
             </ul> 
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12" id="section">
-                    <img src="../img/main.png" alt="메인그림">
-                    <input type="text" name="searchPlayer" id="searchPlayer" placeholder="소환사명, 소환사명, ...">
-                    <input type="submit" id="searchSumit" value=".GG" > 
-                    <div>
-
-                            <div>광고</div>
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-
+                <div class="col-12">
+                    <div class="mainLogo">
+                        <img src="../img/main.png" alt="메인그림">
                     </div>      
+                </div>
+            </div>               
+            <div class="row">
+                <div class="col-12">
+                    <form action="" method="get">
+                    <div class="searchbox">
+                        <input type="text" name="searchPlayer" id="searchPlayer" placeholder="소환사명, 소환사명, ...">
+                        <select name="lan2" id="lan2">
+                            <option value="한국어"><span>KR</span></option>
+                            <option value="중국어">CH</option>
+                            <option value="영어">EN</option>
+                            <option value="일본어">JP</option>
+                        </select>
+                        <input type="submit" id="searchSumit" value=".GG" > 
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="adBox">
+                        <img src="../img/ad.PNG" alt="광고박스입니다.">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="board">
+                        <div class="title">
+                        <a href="https://talk.op.gg/s/lol/all?sort=popular">
+                            
+                                OP.GG Talk 인기글
+                            
+                        </a>
+                    </div>
+                        <div class="leftBox">
+                            <a href="../html/q07-01-01.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>1</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[10]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>10시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-02.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>2</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[13]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>5시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-03.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>3</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[97]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>7시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-04.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>4</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[16]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>3시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-05.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>5</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[41]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>7시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="rightBox">
+                            <a href="../html/q07-01-06.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>6</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[11]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>13시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-07.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>7</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[45]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>5시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-08.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>8</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[84]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>2시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-09.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>9</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[54]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>1시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="../html/q07-01-10.html">
+                                <div class="list">
+                                    <div class="list-num">
+                                        <span>10</span>
+                                    </div>
+                                    <div class="list-img">
+                                        <img src="../img/boardImg.png" alt="게시물그림">
+                                    </div>
+                                    <div class="list-content">
+                                        <div class="list-title">
+                                            <span>게시물 제목입니다.</span> 
+                                            <em>[71]</em>
+                                        </div>
+                                        <div class="list-user">
+                                            <span>6시간 전</span>
+                                            <span>작성자 닉네임</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="row">
+                <div class="col-12" id="footer">
+                    <div class="footer">
+                        <ul>
+                            <li><a href="">About OP.GG</a></li>
+                            <li><a href="">로고 히스토리</a></li>
+                            <li><a href="">개인정보처리방법</a></li>
+                            <li><a href="">도움말</a></li>
+                            <li><a href="">제휴</a></li>
+                            <li><a href="">문의</a></li>
+                            <li><a href="">채용</a> </li>
+                        </ul>
+                            <div class="copyright">
+                                <p>
+                                © 2012-2021 OP.GG. OP.GG isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+
+                                </p>    
+                            </div>
+                            <div class="snsbox">
+                                <a href="https://twitter.com/globalopgg/"><img src="../img/twiter.png" alt="트위터"></a></li>
+                                <a href="https://www.instagram.com/opgginc/"><img src="../img/instar.png" alt="인스타그램"></a></li>
+                                <a href="https://www.facebook.com/lolopgg/"><img src="../img/facebook.png" alt="페이스북"></a></li>                                
+                            </div>
+                            
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <ul>
-                <li><a href="">About OP.GG</a></li>
-                <li><a href="">로고 히스토리</a></li>
-                <li><a href="">개인정보처리방법</a></li>
-                <li><a href="">도움말</a></li>
-                <li><a href="">제휴</a></li>
-                <li><a href="">문의</a></li>
-                <li><a href="">채용</a> </li>
-            </ul>
-            <div class="copyright">
-                <p>
-                © 2012-2021 OP.GG. OP.GG isn’t endorsed by Riot Games and doesn’t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
-                </p>
-                <a href=""><img src="" alt="트위터"></a>
-                <a href=""><img src="" alt="인스타그램"></a>
-                <a href=""><img src="" alt="페이스북"></a>
-            </div>
-        </div>
+  
 </body>
 </html>
