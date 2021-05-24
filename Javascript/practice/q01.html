@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3강 연산자</title>
+</head>
+<body>
+    <script>
+
+        //1. 가로가 3이고 세로가 6인 사각형의 넓이
+        var width = Number(prompt("가로길이를 입력하세요"));
+        var height = Number(prompt("세로길이를 입력하세요"));
+        var quadArea = width*height;
+
+        console.log("사각형의 넓이: " +quadArea);
+
+        //2. 위 길이의 삼각형의 넓이
+        var triArea = quadArea/2;
+        console.log("삼각형의 넓이: "+triArea);
+
+        //3. 성적이 40, 30, 10 평균은
+        var scoreA = Number(prompt("성적을 입력하세요1"));
+        var scoreB = Number(prompt("성적을 입력하세요2"));
+        var scoreC = Number(prompt("성적을 입력하세요3"));
+
+        var sumScore = scoreA+scoreB+scoreC;
+        var avgScore = sumScore;
+
+        console.log("합계: "+sumScore);
+        console.log("평균: "+avgScore);
+
+        //4. 월급이 100원이다 연봉은? (세금 20프로 제외)
+        var monSalary = Number(prompt("월급을 입력하세요"));
+        var annSalary = 100*12*0.8;
+
+        console.log("세후 연봉은: "+annSalary);
+        
+        //5. 286초를 분초로 출력
+        var time = Number(prompt("초를 입력하세요"));
+        var min = parseInt(286/60);
+        var sec = 286%60;
+
+        console.log(min+'분'+sec+'초')
+
+        //6. 176840원을 각 화폐의 종류로 매수 출력
+        var money = Number(prompt("돈 액수를 입력해주세요"));
+        var originMoney = money
+        var unit = 50000;
+
+        var ohMan = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/5;
+
+        var man = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/2;
+
+        var ohCheon = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/5;
+
+        var cheon = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/2;
+
+        var ohBeak = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/5;
+
+        var beak = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/2;
+
+        var ohShip = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/5;
+
+        var ship = parseInt(money/unit);
+        money = money%unit;
+        unit = unit/2;
+
+        console.log("5만원권: "+ohMan+"개");
+        console.log("만원권: "+man+"개");
+        console.log("5천원권: "+ohCheon+"개");
+        console.log("천원권: "+cheon+"개");
+        console.log("5백원권: "+ohBeak+"개");
+        console.log("백원권: "+beak+"개");
+        console.log("5십원권: "+ohShip+"개");
+        console.log("십원권: "+ship+"개");
+
+        //7. 어떤 정수의 값이 음수인지 양수인지 판단해서 음수면 '음수' 양수면 '양수' 0이면 0을 출력하도록하
+        var a= Number(prompt("숫자를 입력하세요"));
+        if(a>0){
+                        console.log("양수");
+        }else if(a<0){
+            console.log("음수");
+        }else{
+            console.log("0");
+        }
+555555555555555555555555555555555555555555555
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>4강 제어구분</title>
+</head>
+<body>
+    <script>
+        //구구단 출력
+        for(j=2;j<=9;j++){
+            for(var i =1;i<=9;i++){
+                console.log(j+" x "+i+" = "+j*i);
+            }
+        }
+        console.log("-----------------------------------------------------------")
+        //구구단에서 5x5=25까지만 출력하고 끝내보자
+        b:for(j=2;j<=5;j++){
+            console.log(j+"단")
+            a:for(var i =1;i<=5;i++){
+                console.log(j+" x "+i+" = "+j*i);
+                if(i==5){
+                break a;
+                }
+            }
+            if(j==5){
+                break b;
+            }
+
+        }
+        console.log("-----------------------------------------------------------")
+        //구구단에서 짝수단만 출력해보자
+        for(j=2;j<=9;j++){
+            console.log(j+"단")
+            if(j%2==0){
+                for(var i =1;i<=9;i++){
+                    console.log(j+" x "+i+" = "+j*i);
+                }
+            }
+        }
+        console.log("-----------------------------------------------------------")
+        //로그인 기능
+        var id = "green";
+        var password = "st1234";
+
+        var userId = prompt("id를 입력하세요");
+        var userPass = prompt("비밀번호를 입력하세요");
+
+        if(id == userId){
+            if(password == userPass){
+                console.log("로그인 성공입니다.");
+            }else{
+                console.log("id 및 비밀번호 오류입니다.")
+            }
+        }
+    </script>
+</body>
+</html>

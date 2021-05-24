@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4강 제어구분</title>
+</head>
+<body>
+    <script>
+        //1. 1부터 100까지 합을구하세요.
+        var sum=0;
+        for(var i=1;i<=100;i++){
+            sum +=i;
+        }
+        
+        console.log(sum);
+        console.log("--------------------------")
+        //2. 1부터 100까지 7의 배수의 합과 평균을 구하세요.
+        var sum = 0;
+        var index = 0;
+        for(var i =1;i<=100;i++){
+            if(i%7==0){
+                sum +=i;
+                index++;
+            }
+        }
+        console.log("합: "+sum);
+        console.log("평균: "+sum/index)
+        console.log("--------------------------")
+
+        //3. 1부터 100까지의 합을 구하되 합계가 1000이 넘어서면 연산을 중단하고 합계와해당 항을 구하세요.
+        var sum=0;
+        var index = 0;
+        
+            var sum=0;
+                for(var i=1;i<=100;i++){
+                    sum +=i;
+                    index++;
+                    if(sum>=1000) {
+                        index = i;
+                        break;
+                    }
+                }
+        console.log("합: "+sum);
+        console.log("항: "+index);
+        console.log("--------------------------")
+
+        //4. 100이하의 자연수중에서 2의 배수와 7의 배수를 모두 출력하고 그것들의 합과 평균을 구하세요.
+        var sum1=0;
+        var sum2=0;
+        var index1 = 0;
+        var index2 = 0;
+        for(var i =1;i<=100;i++){
+            if(i%2==0){
+                sum1+=i;
+                index1++;
+            }
+        }
+        for(var i =1;i<=100;i++){
+            if(i%7==0){
+                sum2+=i;
+                index2++;
+            }
+        }
+        var sum3= sum1+sum2;
+        var index3 = index1+index2;
+        console.log("배수의 총합: "+sum3);
+        console.log("평균: "+sum3/index3);
+        console.log("--------------------------")
+
+        //5. 10~100까지 중 10의 자리와 1의 자리가 짝수인 수를모두 출력하시오
+        var a = 0;
+        var b = 0;
+        for(var i=1;i<10;i++){
+            if(i%2==0){
+                a = i;
+                for(var j=1;j<10;j++){
+                    if(j%2==0){
+                    b = j;
+                    console.log(String(a)+String(b));
+                    } 
+                }
+            }       
+        }
+        console.log("--------------------------")
+
+        /*6. 어떤 정수의 양수중 자신을 제외한 약수를 모두 합하면 자신과 같아지는 수가 있다.
+        예를 들면 6의 약수는 1,2,3,6이다
+            1+2+3+=6이 된다.
+        4~100까지 숫자중 이런 숫자를 찾으세요*/
+        for(var i=4;i<100;i++){
+            var sum=0;
+            console.log("-----")
+            for(var j=1;j<i;j++){
+                if(i%j==0){
+                    sum +=j;
+                    }     
+                }
+                if(sum==i){
+                    console.log(sum);
+                }
+            }
+        console.log("--------------------------")
+        
+        //7. 두개의 숫자를 입력받아서 두 수 사이의 합을 구하세요.
+        //예: 3과 5를 입력받으면 3+4+5=12   12출력
+        var a= Number(prompt("숫자를 입력해주세요1"));
+        var b= Number(prompt("숫자를 입력해주세요2"));
+        function asumb(a,b){
+            var sum=0;
+            for(i=a;i<=b;i++){
+                sum +=i;
+                
+            }
+            return sum;
+        }
+        console.log(asumb(a,b));
+        console.log("--------------------------")
+
+        //8. 로그인 기능을 구현하세요
+        var id = "green";
+        var password = "gr1234";
+
+        var userid = prompt("id를 입력해주세요");
+        var userpassword = prompt("비밀번호를 입력해주세요")
+        function login(a,b){
+            if(userid == id){
+                if(password == userpassword){
+                    console.log("로그인에 성공했습니다.");
+                }else{
+                    console.log("비밀번호 오류입니다.");
+                }
+            }else{
+                console.log("id 오류입니다.");
+            }
+        }
+
+
+        
+                    
+        
+      
+    </script>
+</body>
+</html>
