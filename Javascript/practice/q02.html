@@ -83,6 +83,13 @@
                 }
             }       
         }
+        document.write('<ul>')
+        for(var num=10;num<=100;num++){
+            if(num%2+Math.floor(num/10)%2==0){
+                document.write('<li>'+num+'</li>');
+            }
+        }
+        document.write('</ul>');
         console.log("--------------------------")
 
         /*6. 어떤 정수의 양수중 자신을 제외한 약수를 모두 합하면 자신과 같아지는 수가 있다.
@@ -123,24 +130,106 @@
         var password = "gr1234";
 
         var userid = prompt("id를 입력해주세요");
-        var userpassword = prompt("비밀번호를 입력해주세요")
-        function login(a,b){
-            if(userid == id){
-                if(password == userpassword){
-                    console.log("로그인에 성공했습니다.");
-                }else{
-                    console.log("비밀번호 오류입니다.");
-                }
+        var userpassword = prompt("비밀번호를 입력해주세요");
+        
+        if(userid == id){
+            if(password == userpassword){
+                console.log("로그인에 성공했습니다.");
             }else{
-                console.log("id 오류입니다.");
+                console.log("비밀번호 오류입니다.");
             }
+        }else{
+            console.log("id 오류입니다.");
+        }
+        console.log("--------------------------")
+
+        //9. 국어, 영어, 수학 점수를 입력받아서 총점과 평균을 구하는 프로그램을 만드시오
+        var korScore = Number(prompt("국어점수를 입력하세요"));
+        var engScore = Number(prompt("영어점수를 입력하세요"));
+        var mathScore = Number(prompt("수학점수를 입력하세요"));
+
+        var sumScore = korScore + engScore + mathScore;
+        var avgScore = sumScore/3;
+
+        console.log("총점: "+ sumScore);
+        console.log("평균: "+ avgScore);
+
+        console.log("--------------------------")
+
+        //10+11.
+        
+        function play(){
+            var comNum = Math.floor(Math.random()*3)+1;
+            var com;
+            switch(comNum){
+                case 1:
+                    com = '가위';
+                    break;
+                case 2:
+                    com = '바위';
+                    break;
+                case 3:
+                    com = '보';
+                    break;
+            }
+            //document.write(com+'<br>')
+            var choice = prompt("'가위 . 바위 . 보'중 하나만 입력해주세요!");
+            if(choice!='가위' && choice!='바위' && choice!='보'){
+                alert('잘못 입력했습니다');
+            }else if(choice=='가위'){
+                if(com=='가위'){
+                    return '무';
+                }else if(com=='바위'){
+                    return '패';
+                }else if(com=='보'){
+                    return '승';
+                }
+            }else if(choice=='바위'){
+                if(com=='가위'){
+                    return '승';
+                }else if(com=='바위'){
+                    return '무';
+                }else if(com=='보'){
+                    return '패';
+                }
+            }else if(choice=='보'){
+                if(com=='가위'){
+                    return '패';
+                }else if(com=='바위'){
+                    return '승';
+                }else if(com=='보'){
+                    return '무';
+                }
+            }
+            document.write('<br>컴퓨터는 '+com+"을 냈습니다.");
         }
 
+        
+        var game = parseInt(prompt('게임 횟수를 입력하세요'));
+        var w=0,l=0,d=0;
+        for(var i=0;i<game;i++){
+            var result = play();
+            switch(result){
+                case '승':
+                    w++;
+                    alert('당신이 이겼습니다.')
+                    break;
+                case '무':
+                    d++;
+                    alert('비겼습니다.')
+                    break;
+                case '패':
+                    l++;
+                    alert('당신이 졌습니다..')
+                    break;
+                default:
+                    alert('잘못입력했습니다. 다시 입력해주세요')
+                    i--;
+                    break;
+            }
+        }
+        document.write('<br>'+w+'승'+d+'무'+l+'패');
 
-        
-                    
-        
-      
     </script>
 </body>
 </html>
