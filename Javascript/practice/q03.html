@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5강</title>
+    <style>
+        button{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="document.bgColor=RanColor()">배경색 바꾸기</button>
+    <script>
+        //1. 1에서9까지의 숫자로 이루어진3자리 숫자를만들어서 배열에 저장하는함수를 만들어보세요.(숫자의 중복 제거)
+        var numbers = [];
+        main:for(i=0;i<3;i++){
+            numbers[i]=Math.floor(Math.random()*9)+1;
+            for(j=0;j<i;j++){
+                if(numbers[i]==numbers[j]){
+                    i--;
+                    continue main;
+                }
+            }
+        } 
+        console.log(numbers);
+        console.log('-------------------------------');
+        
+        //2. 로또번호를뽑는 함수를 만드세요.(1부터45사이의 숫자6개, 중복없이) 함수를 실행할때배열을 반환하세요.
+        var lotto = [];
+        lotto:for(i=0;i<6;i++){
+            lotto[i]=Math.floor(Math.random()*45)+1;
+            for(j=0;j<i;j++){
+                if(lotto[i]==lotto[j]){
+                    i--;
+                    continue lotto;
+                }
+            }
+        }
+        console.log(lotto);
+        console.log('-------------------------------');
+
+        //3. 주어진 배열에서가장 큰 수(인덱스번호)를 찾으세요.[78,54,89,57,84,95,74,91,84,67,52,94,82]
+
+        var arr = [78,54,89,57,84,95,74,91,84,67,52,94,82];
+        var maxNum= arr[0];
+        var indexNum = -1;
+        for(i=0;i<arr.length;i++){
+            if(maxNum < arr[i]){
+                maxNum = arr[i];
+                indexNum++;
+            }
+        }
+        console.log('최대값: '+maxNum);
+
+        //3-1 주어진 배열에서합계와 평균을 구하세요.
+        var sumArr = 0;
+        var countNum=0;
+        for(i=0;i<arr.length;i++){
+            sumArr +=arr[i];
+            countNum++;
+        }
+        var avgArr = sumArr/countNum;
+        
+        console.log('배열의 합계: '+sumArr);
+        console.log('배열의 평균: '+avgArr);
+        console.log('-------------------------------');
+
+        //4. 배열에 색상문자열을입력한 후 버튼 클릭시 웹페이지의배경화면을임의로 바꾸는 함수를 만들어서 버튼에 적용하세요.
+        //[‘red’,’blue’,’green’,’black’,’white’~~]버튼을 누르면 임의의 색이alert창으로 출력되도록 만드세요.
+        function RanColor(){
+            var bacColor = ['red', 'blue', 'yellow', 'green','black','yellowgreen'];
+            var ranColorNum = Math.floor(Math.random()*6);
+            return bacColor[ranColorNum];
+        }
+
+        //5. 업다운 게임을 만들어 봅시다.컴퓨터가1부터100사이의 임의의 숫자를 생성하고사용자가그것을 맞추는 게임
+        //-컴퓨터가생각한 숫자보다작은 숫자를 입력하면'업' 경고창
+        //-컴퓨터가생각한 숫자보다큰 숫자를 입력하면'다운' 경고창
+        //-일치하면'성공' 메시지가출력하도록만들면 된다.
+        //-맞출때 까지 반복해서몇 번만에 맞췄는지횟수를출력해 봅시다.
+        var run = true;
+        var countgame = 0;
+        var comRanNum = Math.floor(Math.random()*100)+1;
+        console.log('컴퓨터가 정한 숫자: '+comRanNum);
+        while(run){
+            var userChoice = prompt("숫자를입력해주세요");
+            if(userChoice>comRanNum){
+                alert('다운');
+                countgame++;
+            }else if(userChoice<comRanNum){
+                alert('업');
+                countgame++;
+            }else if(userChoice==comRanNum){
+                alert('성공');
+                countgame++;
+                run=false;
+            }
+        }
+        console.log(countgame+'번 만에 성공했습니다.');
+        console.log('-------------------------------');
+        
+        //6. 사람이 숫자를 입력하면컴퓨터가그 숫자를 맞추는 게임을 만들어 봅시다.컴퓨터가생각해야할 임의의 숫자Math.floor(Math.random()*(max-min+1))+min;
+    </script>
+</body>
+</html>
