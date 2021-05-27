@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./ex10.html" method="get" name="form1" id="form2">  
+        <input type="text" name="userName" id="Name">
+        <input type="submit" value="제출" onclick="return check()">
+    </form>
+    <script>
+        function check(){
+            var name = document.forms.form1.userName.value;
+            if(String(name).length >=8){
+                return true;
+            }else{
+                alert('이름은 8자 이상 작성하세요');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

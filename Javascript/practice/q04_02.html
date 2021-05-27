@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #openScore{
+            font-size: 50px;
+            background-color: rgb(117, 161, 212);
+            color: white;
+            border-radius: 10px;
+            border: none;
+        }
+        tr,td{
+            border: solid;
+        }
+    </style>
+</head>
+<body>
+    <h2>학생성적조회 프로그램</h2>
+    <fieldset>
+        <legend>학생정보</legend>
+        <form action="#" method="get">
+            <label for="stuName">학생이름: </label>
+            <input type="text" name="stuName" id="stuName" required><br>
+            <label for="korScore">국어점수: </label>
+            <input type="number" name="korScore" id="korScore" min="0" max="100"><br>
+            <label for="engScore">영어점수: </label>
+            <input type="number" name="engScore" id="engScore" min="0" max="100"><br>
+            <label for="MathScore">수학점수: </label>
+            <input type="number" name="MathScore" id="MathScore" min="0" max="100"><br>
+            <button type="button" onclick="saveStuInfo()">저장</button>
+        </form>
+    </fieldset>
+    <br>
+    <button type="button" onclick="openScore()" id="openScore">성적조회</button>
+    <script>
+        var students = [];
+        function saveStuInfo(){
+            var stuName = document.getElementById('stuName').value;
+            var korScore = parseInt(document.getElementById('korScore').value);
+            var engScore = parseInt(document.getElementById('engScore').value);
+            var mathScore = parseInt(document.getElementById('MathScore').value);
+            var sumScore = korScore+engScore+mathScore;
+            var avgScore = sumScore/3;
+
+            var eachstu = [stuName,korScore,engScore,mathScore,sumScore,avgScore];
+            //console.log(eachstu);
+            students.push(eachstu);
+            //console.log(students);
+            alert('저장되었습니다.')
+        }
+        function openScore(){
+            var inputName = prompt('학생이름을 입력하세요');
+            for(i=0;i<students.length;i++){
+                if(students[i][0]==inputName){
+                    alert('학생이름: '+students[i][0]+
+                          '\n국어점수: '+students[i][1]+'점'+
+                          '\n영어점수: '+students[i][2]+'점'+
+                          '\n수학점수: '+students[i][3]+'점'+
+                          '\n합    계: '+students[i][4]+'점'+
+                          '\n평    균: '+students[i][5]+'점'
+
+                    );
+                }else{
+                    alert('해당 학생정보가 없습니다.')
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .aaaa{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="hTag"><a href="https://www.navaer.com">DOM</a> 이란</h1>
+    <p id="pTag" class="test"><strong>Document Object Model</strong>의 약자이다.</p>
+    <input type="button" value="버튼" onclick="test()">
+    <h1>안녕하세요</h1 class="test">
+    <h1>반갑습니다</h1>
+    <div>
+        <p>
+            <h1 class="test">
+                자식으로서 H1태그
+            </h1>
+        </p>
+    </div>
+    <input type="button" value="변경1" onclick="test2()">
+    <input type="button" value="토글" onclick="toggle1()">
+    <script>
+        function test(){
+            document.write('<h1>만나서 반갑습니다.</h1>')
+        }
+        function test2(){
+            var h = document.getElementById('hTag');
+            h.innerHTML = '<a href="https://www.daum.net">BOM</a>이란';
+        }
+        function toggle1(){
+            var b = document.getElementsByTagName('body')[0];
+            if(b.hasAttribute('class')){
+                b.removeAttribute('class');
+            }else{
+                b.setAttribute('class','aaaa');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -102,7 +102,21 @@
         console.log(countgame+'번 만에 성공했습니다.');
         console.log('-------------------------------');
         
-        //6. 사람이 숫자를 입력하면컴퓨터가그 숫자를 맞추는 게임을 만들어 봅시다.컴퓨터가생각해야할 임의의 숫자Math.floor(Math.random()*(max-min+1))+min;
+        //6. 사람이 숫자를 입력하면컴퓨터가그 숫자를 맞추는 게임을 만들어 봅시다.
+        //컴퓨터가생각해야할 임의의 숫자Math.floor(Math.random()*(max-min+1))+min;
+        var userNum = prompt("숫자를입력해주세요");
+        var countgame = 0;
+        var run = true;
+        while(run){
+            var comChoice = Math.floor(Math.random()*(100-1+1))+1;
+            if(userNum!=comChoice){
+                countgame++;
+            }else{
+                countgame++
+                run=false
+            }
+        }
+        console.log('컴퓨터가'+countgame+'번 만에 맞췄습니다.')
     </script>
 </body>
 </html>

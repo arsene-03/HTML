@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6강</title>
+    <style>
+        #bgcol{
+            font-size: 50px;
+        }
+        #gugudan tr td{
+            background-color: white;
+            border: solid;
+        }
+        form{
+            display: inline;
+        }
+    </style>
+</head>
+<body id=bd>
+    <button type="button" id="bgcol" onclick="document.bgColor=bgc()">배경색 바꾸기</button>
+    <table id="gugudan">
+        <script>
+            document.write('<tr>');
+            for(i=2;i<=9;i++){
+                    document.write('<td>');
+                    document.write('***'+i+'단 ***<br>');
+                for(j=1;j<=9;j++){
+                    document.write(i+'X'+j+'='+i*j+'<br>');
+                }
+                document.write('</td>');    
+            }
+            document.write('</tr>');    
+        </script>
+    </table>
+    <hr>
+    <table id="gugudan">
+        
+        <script>
+            document.write('<tr>');
+            for(i=1;i<=3;i++){
+                    document.write('<td>');
+                    document.write('***'+i+'단 ***<br>');
+                for(j=1;j<=9;j++){
+                    document.write(i+'X'+j+'='+i*j+'<br>');
+                }
+                document.write('</td>');    
+            }
+            document.write('</tr>');   
+            document.write('<tr>');
+            for(i=4;i<=6;i++){
+                    document.write('<td>');
+                    document.write('***'+i+'단 ***<br>');
+                for(j=1;j<=9;j++){
+                    document.write(i+'X'+j+'='+i*j+'<br>');
+                }
+                document.write('</td>');    
+            }
+            document.write('</tr>');   
+            document.write('<tr>');
+            for(i=7;i<=9;i++){
+                    document.write('<td>');
+                    document.write('***'+i+'단 ***<br>');
+                for(j=1;j<=9;j++){
+                    document.write(i+'X'+j+'='+i*j+'<br>');
+                }
+                document.write('</td>');    
+            }
+            document.write('</tr>');   
+        </script>
+    </table>
+    <hr>
+    <h2>회원가입 기능 프로그램</h2>
+    <fieldset>
+        <legend>로그인</legend>
+        <form action="#" method="get" id="signIn">
+            <label for="userId">아이디: </label>
+            <input type="text" name="userId" id="userId" maxlength="10" minlength="3" placeholder="아이디를 입력해주세요"> <br>
+            <label for="userPassword">비밀번호: </label>
+            <input type="password" name="userPassword" id="userPassword" maxlength="10" minlength="3" placeholder="비밀번호 입력해주세요"><br>
+            <button type="button" onclick="signin()">로그인</button>
+        </form>
+    </fieldset>
+    <fieldset>
+        <legend>회원가입</legend>
+        <form action="#" method="get" id="signUp">
+            <label for="newUserId">아이디: </label>
+            <input type="text" name="newUserId" id="newUserId" maxlength="10" minlength="3" placeholder="아이디를 입력해주세요"> <br>
+            <label for="NewUserPassword">비밀번호: </label>
+            <input type="password" name="NewUserPassword" id="NewUserPassword" maxlength="10" minlength="3" placeholder="비밀번호 입력해주세요"><br>
+            <label for="newUserName">이름: </label>
+            <input type="text" name="newUserName" id="newUserName" maxlength="10" minlength="1" placeholder="이름을 입력해주세요"> <br>
+            <button type="button" onclick="signup()">회원가입</button>
+            
+        </form>
+    </fieldset>
+    
+    
+
+
+
+
+    <script>
+        var users=[];
+
+        function bgc(){
+            var bacColor = ['red', 'blue', 'yellow', 'green','black','yellowgreen'];
+            var ranColorNum = Math.floor(Math.random()*6);
+            return bacColor[ranColorNum];
+        }
+        function signin(){
+            var putinID = document.forms.signIn.userId.value;
+            var putinPass = document.forms.signIn.userPassword.value;
+
+            for(i=0;i<users.length;i++){
+                if(users[i][0]==putinID && users[i][1]==putinPass){
+                    alert(users[i][2]+'님 환영합니다.');
+                }else{
+                    alert('Id 및 비밀번호를 확인해주세요.');
+                }
+            }
+        }
+        function signup(){
+            var eachUsers = [document.forms.signUp.newUserId.value,document.forms.signUp.NewUserPassword.value,document.forms.signUp.newUserName.value];
+            //console.log(eachUsers);
+            users.push(eachUsers);
+            //console.log(users);
+            alert('회원가입 되었습니다.');
+        }
+        
+        
+
+
+
+    </script>
+</body>
+</html>
