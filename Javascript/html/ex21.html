@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload = function(){
+            var box = document.createElement('div');
+            box.innerHTML = 'JavaScript';
+            document.body.appendChild(box);
+            box.style.display = 'inline=block';
+            box.style.position = 'absolute';
+            box.style.padding = '10px';
+            box.style.backgroundColor = 'blue';
+            box.style.color = 'white';
+            box.style.cursor = 'pointer';
+
+            var boxOffsetX, boxOffsetY;
+
+            box.addEventListener("mousedown",function mouseDownListener(e){
+                //마우스 움직임 감지 리스너
+                document.addEventListener("mousemove",mouseMoveListener,false);
+
+                boxOffsetX = e.offsetX;
+                boxOffsetY = e.offsetY;
+            },false)
+            //마우스 뗏을 때 이벤트 꺼져야함
+            document.addEventListener("mouseup",function mouseupListener(e){
+                document.removeEventListener("mousemove",mouseMoveListener,false);
+            },false)
+
+            function mouseMoveListener(e){
+                //박스의 이동을 마우스 누른 위치로 드래그
+                box.style.left = e.pageX - boxOffsetX+"px";
+                box.style.top = e.pageY - boxOffsetY+"px";
+                console.log(boxOffsetX); // 박스 잡은 위치
+                console.log(boxOffsetY);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -19,7 +19,7 @@
     </style>
 </head>
 <body id=bd>
-    <button type="button" id="bgcol" onclick="document.bgColor=bgc()">배경색 바꾸기</button>
+    <button type="button" id="bgcol" onclick="bgc()">배경색 바꾸기</button>
     <table id="gugudan">
         <script>
             document.write('<tr>');
@@ -107,7 +107,7 @@
         function bgc(){
             var bacColor = ['red', 'blue', 'yellow', 'green','black','yellowgreen'];
             var ranColorNum = Math.floor(Math.random()*6);
-            return bacColor[ranColorNum];
+            document.body.style.backgroundColor = bacColor[ranColorNum];
         }
         function signin(){
             var putinID = document.forms.signIn.userId.value;

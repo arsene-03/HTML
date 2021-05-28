@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="box">안녕하세요</p>
+    <script>
+        window.onload = function(){
+            var p = document.getElementById('box');
+            p.addEventListener("click",test,false);
+            //p.removeEventListener("click",test,false);
+        }
+        function test(e){
+            e.currentTarget.style.color='red';
+        }
+    </script>
+</body>
+</html>

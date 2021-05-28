@@ -39,15 +39,15 @@
     <script>
         var students = [];
         function saveStuInfo(){
-            var stuName = document.getElementById('stuName').value;
-            var korScore = parseInt(document.getElementById('korScore').value);
-            var engScore = parseInt(document.getElementById('engScore').value);
-            var mathScore = parseInt(document.getElementById('MathScore').value);
-            var sumScore = korScore+engScore+mathScore;
-            var avgScore = sumScore/3;
-
-            var eachstu = [stuName,korScore,engScore,mathScore,sumScore,avgScore];
-            //console.log(eachstu);
+            var eachstu = {
+                name: document.getElementById('stuName').value,
+                korScore: parseInt(document.getElementById('korScore').value),
+                engScore: parseInt(document.getElementById('engScore').value),
+                mathScore: parseInt(document.getElementById('MathScore').value),
+            }
+            eachstu.sumScore = eachstu.korScore+eachstu.engScore+eachstu.mathScore;
+            eachstu.avgScore = eachstu.sumScore/3;
+            //console.log(eachstu.name);
             students.push(eachstu);
             //console.log(students);
             alert('저장되었습니다.')
@@ -55,14 +55,13 @@
         function openScore(){
             var inputName = prompt('학생이름을 입력하세요');
             for(i=0;i<students.length;i++){
-                if(students[i][0]==inputName){
-                    alert('학생이름: '+students[i][0]+
-                          '\n국어점수: '+students[i][1]+'점'+
-                          '\n영어점수: '+students[i][2]+'점'+
-                          '\n수학점수: '+students[i][3]+'점'+
-                          '\n합    계: '+students[i][4]+'점'+
-                          '\n평    균: '+students[i][5]+'점'
-
+                if(students[i].name==inputName){
+                    alert('학생이름: '+students[i].name+
+                          '\n국어점수: '+students[i].korScore+'점'+
+                          '\n영어점수: '+students[i].engScore+'점'+
+                          '\n수학점수: '+students[i].mathScore+'점'+
+                          '\n합    계: '+students[i].sumScore+'점'+
+                          '\n평    균: '+students[i].avgScore+'점'
                     );
                 }else{
                     alert('해당 학생정보가 없습니다.')

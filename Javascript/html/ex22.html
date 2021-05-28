@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="display"></p>
+    <script>
+        window.onload = function(){
+            document.addEventListener("keydown",showKey,false);
+            var display = document.getElementById('display');
+            function showKey(e){
+                var specialKey = ["altKey","ctrlKey","shiftKey","key","code","keyCode"];
+                var s = "";
+                for(var i in specialKey){
+                    s +="<br>"+specialKey[i] + " :"+e[specialKey[i]];
+                }
+                s+="->"+String.fromCharCode(e.keyCode);
+                display.innerHTML = s;
+            }
+        }
+    </script>
+</body>
+</html>

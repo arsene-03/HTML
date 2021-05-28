@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" id="form1">
+        이름: <input type="text" name="username" id="username"><br>
+        취미: <br>
+        <input type="checkbox" name="hobby" id="movie" value="movie">영화감상<br>
+        <input type="checkbox" name="hobby" id="game" value="game">게임<br>
+        <input type="checkbox" name="hobby" id="fishing" value="fishing">낚시<br>
+        성별:
+        <input type="radio" name="gender" id="male" value="male">남성
+        <input type="radio" name="gender" id="female" value="female">여성
+        <br>
+        직업:
+        <select name="job" id="job">
+            <option value="front">프론트 개발자</option>
+            <option value="back">백앤드 개발자</option>
+            <option value="devops">데브옵스 개발자</option>
+        </select>
+        <br> 최후의 변론
+        <br><textarea name="defense" id="defense" cols="30" rows="10"></textarea>
+        <br><input type="button" value="채우기" onclick="full()">
+        <br><input type="submit" value="제출" onclick="return ok()">
+    </form>
+    <script>
+        function ok(){
+            var f= document.forms.form1;
+
+            var name = f.username.value;
+            var hobby = [];
+            
+            console.log('이름: '+name);
+            if(f.movie.checked){
+                hobby.add(f.movie.value);
+            }
+            if(f.game.checked){
+                hobby.add(f.game.value);
+            }
+            if(f.fishing.checked){
+                hobby.push(f.fishing.value);
+            }
+            console.log('이름: '+hobby);
+
+            var gender;
+            if(f.male.checked){
+                gender = f.male.value;
+            }else if(f.female.checkd){
+                gemder = f.female.value;
+            }else{
+                gender = null;
+            }
+            console.log("성별: "+gender);
+
+            var job = f.job.value;
+            console.log("w직업: "+job);
+        
+            return false;
+        }
+        function full(){
+            var f = document.forms.form1;
+
+            f.username.value ='서유기';
+            f.movie.checked = true;
+            f.female.checked = true;
+            f.job.selectedIndex = 2;
+            f.defense.value="만세";
+        }
+    </script>
+</body>
+</html>

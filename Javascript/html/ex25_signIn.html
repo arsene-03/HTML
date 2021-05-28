@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" id="loginForm">
+        <input type="text" name="userid" id="userid"><br>
+        <input type="password" name="userpassword" id="userpassword"><br>
+        <input type="button" value="로그인" onclick="login()">
+        </form>
+        <p id="username"></p>
+        <script>
+            function login(){
+                var f = document.forms.loginForm;
+                var userid = f.userid.value;
+                var userpassword = f.userpassword.value; 
+
+                //직렬화된 객체 꺼내기(역직렬화)
+                var userinfo = JSON.parse(localStorage.getItem('userinfo'));
+                console.log("아이디: "+userinfo.userid);
+                console.log("비밀번호: "+userinfo.password);
+
+                // if(userid==localStorage.getItem('userid') 
+                //     && userpassword==localStorage.getItem('userpassword')){
+                //     var p = document.getElementById('username');
+                //     p.innerHTML = userid;
+
+                // }
+            }
+        </script>
+</body>
+</html>

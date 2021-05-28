@@ -5,14 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            margin-top: 30px;
+            float: left;
+            width: 45vw;
+            text-decoration-line: line-through;
+        }
+        #checkbox{
+            border-right: 3px black dashed;;
+        }
+        h2{
+            text-align: center;
+            background-color: yellowgreen;
+            color: yellow;
+        }
+        form{
+            text-align: center;
+        }
+        #work{
+            text-indent: 10px;
+        }
+    </style>
 </head>
-<body>
+<body id="bd">
     <h2>To-Do리스트</h2>
-    <button type="button" onclick="toDo()">할일 기록</button>
-    <input type="checkbox" name="chb" id="chb" value="exer">운동
-    
+    <form action="#" method="post" id="todo">
+        <label for="work"></label>
+        <input type="text" name="work" id="work" placeholder="할 일을 입력해주세요" required>
+        <button type="button" id="but" onclick="todo()">'저장'</button>     
+    </form>
+    <div id="checkbox"><form action="#" method="post" id="cb"></form></div>
+    <div id="listbox"><ul id="listboxul"></ul></div>
     <script>
+        function todo() {
+            //체크박스
+            
+            var work =document.forms.todo.work.value;
+            var checkbox = document.getElementById('cb');
+            var listbox = document.getElementById('listboxul');
+            //console.log(work);
 
+            var addChk =document.createElement('input');
+            addChk.setAttribute('type','checkbox');
+            addChk.setAttribute('name','todo');
+            addChk.setAttribute('id',work);
+            addChk.addEventListener("change"),function(e){
+                e.currentTarget.style.
+            },false);
+            checkbox.appendChild(addChk);
+            
+
+            var addText =document.createTextNode(work);
+            checkbox.appendChild(addText);
+            
+            var br = document.createElement('br');
+            checkbox.appendChild(br);
+            
+            //리스트
+            var addList = document.createElement('li');
+            var text = addList.innerHTML= work;
+            listbox.appendChild(addList);
+
+            // a.innerHTML='<input type="checkbox">doit';
+            // document.body.appendChild(a);
+            
+            
+        }
+        var checked = document.forms.cb.아이디값.checked
+        if(checkd=true){
+            document.getElementById('listboxul').style.textDecorationLine = "line-through";
+        }
     </script>
 
 </body>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" id="loginForm">
+        <input type="text" name="userid" id="userid"><br>
+        <input type="password" name="userpassword" id="userpassword"><br>
+        <input type="button" value="저장" onclick="save()">
+        </form>
+        <script>
+            function save(){
+                var f = document.forms.loginForm;
+                var userid = f.userid.value;
+                var userpassword = f.userpassword.value;
+
+
+                var user = new User(userid,userpassword);
+
+                localStorage.setItem('userinfo',JASON.stringify(user)); // 객체와 배열은 직렬화를 해야 저장할 수 있음 
+            
+            }
+            function User(userid,userpassword){
+                this.userid = userid;
+                thus.userpassword = userpassword;
+            }
+        </script>
+</body>
+</html>

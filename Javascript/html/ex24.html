@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="username"></p>
+    <input type="button" value="입력" onclick="inputName()">
+    <script>
+        window.onload = function(){
+            var p =document.getElementById('username');
+            var username =localStorage.getItem('username');
+            p.innerHTML = username;
+        }
+        //세션 스토리지 => 세션이 유지되는 동안만 정보 저장
+
+        //1. 세션 스토리지 정보 저장 키:값
+        sessionStorage.setItem('userId','asdf');
+
+        //2. 세션 스토리지 정보 추출
+        var userId = sessionStorage.getItem('userId');
+        console.log('아이디: '+userId)
+
+        //3. 세션 스토리지 정보 삭제
+        sessionStorage.removeItem('userId');
+        
+        //3-1. 세션 스토리지 전제 정보 삭제
+        sessionStorage.clear();
+
+        // 정보를 계속 저장하고 싶다면 로컬 스토리지를 사용합시다.
+        localStorage.setItem('userPassword','1234');
+        function inputName(){
+            var name = prompt('이름을 입력하세요')
+            localStorage.setItem('username',name)
+        }
+
+        // 객체 자체를 넣고 싶을 때는 직렬화를 해야한다.
+        // JSON
+        
+
+
+    </script>
+</body>
+</html>
