@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do 리스트</title>
+</head>
+<style>
+    .container{
+        margin: 0,auto;
+        border: 1px solid black;
+        width:  500px;
+    }
+    h1{
+        text-align: center;
+    }
+    ol{
+        list-style: none;
+    }
+    img{
+        cursor: pointer;
+    }
+    .line{
+        text-decoration: line-through;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>투두 리스트</h1>
+    <input type="button" value="할일 추가" onclick="addList()">
+    <ol id="todoList">
+    </ol>
+    </div>
+    <script>
+        function addList(){
+            var li = document.createElement("li");
+            var ol = document.getElementById("todoList");
+
+            var chk = document.createElement("input");
+            chk.setAttribute("type","checkbox");
+            chk.setAttribute("onchange","line(this)");
+
+            var span = document.createElement("span");
+
+            var img = document.createElement("img");
+            img.setAttribute("src","../practice/img/xxx.png");
+            img.setAttribute("alt","cancleMark");
+            img.setAttribute("width","25px");
+            img.setAttribute("heigh","15px");
+            //img.setAttribute("onclick","delList(this)");
+            img.addEventListener("click",function(e){ // e: 이벤트 객체
+                e.currentTarget.parentNode.remove();
+            },false)
+
+            var todo = prompt("할일을 입력해 주세요");
+            span.innerHTML = todo;
+
+            li.appendChild(chk);
+            li.appendChild(span);
+            li.appendChild(img);
+            
+            ol.appendChild(li);
+        }
+        // function delList(n){
+        //     var list =n.parentNode;
+        //     var ol = document.getElementById("todoList");
+        //     alert("삭제 하겠습니까?");
+        //     list.remove();
+        // }
+        function line(n){
+            var span = n.nextElementSibling;
+            span.classList.toggle('line');
+        }
+    </script>
+</body>
+</html>

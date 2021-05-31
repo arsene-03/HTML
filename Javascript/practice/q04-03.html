@@ -10,7 +10,7 @@
             margin-top: 30px;
             float: left;
             width: 45vw;
-            text-decoration-line: line-through;
+        
         }
         #checkbox{
             border-right: 3px black dashed;;
@@ -25,6 +25,9 @@
         }
         #work{
             text-indent: 10px;
+        }
+        .lt{
+            text-decoration: line-through;
         }
     </style>
 </head>
@@ -50,11 +53,13 @@
             addChk.setAttribute('type','checkbox');
             addChk.setAttribute('name','todo');
             addChk.setAttribute('id',work);
-            addChk.addEventListener("change"),function(e){
-                e.currentTarget.style.
-            },false);
+ 
             checkbox.appendChild(addChk);
-            
+            addChk.addEventListener("change",function(e){
+                e.currentTarget.classList.toggle('lt');
+                listbox.classList.toggle('lt');
+                //style.textDecorationLine = "line-through";
+            },false);
 
             var addText =document.createTextNode(work);
             checkbox.appendChild(addText);
@@ -72,10 +77,8 @@
             
             
         }
-        var checked = document.forms.cb.아이디값.checked
-        if(checkd=true){
-            document.getElementById('listboxul').style.textDecorationLine = "line-through";
-        }
+        
+        
     </script>
 
 </body>

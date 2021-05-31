@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 단어장 - table</title>
+</head>
+<body>
+    <table id="wordTable" border="1">
+        <tr>
+            <td>
+                😍
+            </td>
+            <td>
+                <input type="button" value="단어추가" onclick="addWord()">
+            </td>
+            <td>
+                <input type="button" value="마지막 단어 삭제" onclick="removeLastWord()">
+            </td>
+            <td>
+                <input type="button" value="번호로 단어 삭제" onclick="removeNumWord()">
+            </td>
+            <td>
+                <input type="button" value="특정 단어로 삭제" onclick="removeEachText()">
+            </td>
+        </tr>
+        <tr>
+            <td>🙈
+
+            </td>
+            <td colspan="2">
+                영단어
+            </td>
+            <td colspan="2">
+                한글의미
+            </td>
+        </tr>
+    </table>
+    <script>
+        function addWord(){ //단어추가
+            var engWord = prompt("영어 단어를 입력해 주세요.");
+            var korWord = prompt("한글 뜻을 입력해 주세요.");
+
+            var table = document.getElementById("wordTable");
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            td1.innerHTML= table.rows.length-1;
+            var td2 = document.createElement("td");
+            td2.setAttribute("colspan",2);
+            td2.innerHTML=engWord;
+            var td3 = document.createElement("td");
+            td3.setAttribute("colspan",2);
+            td3.innerHTML=korWord;
+            table.appendChild(tr);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+        }
+        function removeLastWord(){ // 마지막 단어 삭제
+            var lastDel = document.getElementById("wordTable").lastChild;
+            lastDel.remove();
+            td1.innerHTML= table.rows.length-1;
+        }
+        function removeNumWord(){ // 번호로 단어 삭제
+            var num = parseInt(prompt("숫자를 입력하세요."));
+            var numDel = document.getElementById("wordTable").rows;
+            numDel[num+1].remove();
+        }
+        function removeEachText(){
+            //var eword = prompt("단어를 입력하세요.");
+            var eachWordDel = document.getElementById("wordTable").rows;
+            for(i=2;i<eachWordDel.length-2;i++){
+                console.log(eachWordDel[i]);
+            }
+            
+
+            }    
+    </script>
+</body>
+</html>

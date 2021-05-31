@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 단어장 - p</title>
+</head>
+<body>
+    <h1>영어 단어장</h1>
+    <input type="button" value="단어 추가" onclick="addWord()">
+    <script>
+        function addWord(){
+            var engWord = prompt('영어단어를 입력하세요');
+            var korWord = prompt('한글 뜻을 입력하세요.');
+
+            var p = document.createElement('p');
+            p.innerHTML = engWord+" : "+korWord;
+            var body = document.getElementsByTagName('body')[0];
+            body.appendChild(p);
+        }
+        
+
+    </script>
+</body>
+</html>

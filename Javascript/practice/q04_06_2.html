@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 단어장 - list</title>
+</head>
+<body>
+    <h1>영단어장 만들기</h1>
+    <input type="button" value="단어 추가" onclick="addWord()">
+    <input type="button" value="마지막 단어 삭제" onclick="removeLastWord()">
+    <input type="button" value="번호로 단어 삭제" onclick="removeNumWord()">
+    <input type="button" value="특정 단어로 삭제" onclick="removeEachText()">
+    <ol id="wordList">
+        <!--<li> 영단어 : 한글 뜻 </li>-->
+    </ol>
+    <script>
+        function addWord(){
+            var engWord = prompt("영어 단어를 입력해 주세요.");
+            var korWord = prompt("한글 뜻을 입력해 주세요.")
+
+            var ol = document.getElementById("wordList");
+            var li = document.createElement("li");
+            li.setAttribute("id",engWord);
+            var span = document.createElement("span");
+        
+            li.innerHTML = engWord+" : "+korWord;
+
+            ol.appendChild(li);
+        }
+        function removeLastWord(){
+            var lastWord = document.getElementById("wordList").lastChild;
+            if(lastWord == null){
+                alert("삭제할 대상이 없습니다.");
+            }
+            lastWord.remove();
+        }
+        function removeNumWord(){
+            var num = prompt("숫자를 입력하세요.");
+            var numWord = document.getElementsByTagName("li");
+            if(numWord[num-1] == null){
+                alert("삭제할 대상이 없습니다.");
+            }else{
+                numWord[num-1].remove();
+            }
+        }
+        // function removeEachText(){
+            
+        //     var eword = prompt("단어를 입력하세요.");
+        //     var eachText = document.getElementById(eword);
+        //     if(eachText == null){
+        //         alert("삭제할 대상이 없습니다.");
+        //     }else{
+        //         eachText.remove();
+        //     }
+        // }
+        function removeEachText(){
+            //var eword = prompt("단어를 입력하세요.");
+            var lists = document.getElementsByTagName("li");
+            var flag = -1;
+            if(lists[0]==null){
+                alert('삭제할 대상이 없습니다.');
+            }else{
+                
+                var selectWord = prompt("삭제할 단어를 입력하세요.");
+                for(var i=0;i<lists.length;i++){
+                    var engWord = lists[i] // <li> 영단어:한글뜻</li>
+                                .innerHTML // "영단어:한글뜻"
+                                .split(":")[0].trim(); // : 를 기준으로 문자열 
+                                console.log(engWord);
+                    if(engWord == selectWord){
+                        lists[i].remove();
+                        break;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
