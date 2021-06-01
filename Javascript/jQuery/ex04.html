@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <h1>안녕하세요</h1>
+    <img>
+    <img>
+    <img>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <script>
+        //2. 선택된 문서객체에 효과를 적용하는 방법 - 함수(jquery 내장 메서드)를 이용
+
+        //메서드의 기본 기능 => 속성 값을 부여하거나 꺼낼때 사용하는 메서드
+        // 2-1.setter 기능 : 값을 지정할 때 사용(=>반환값 : jQuery객체 반환, 메서드 체이닝이 가능해짐)
+        //값 지정방법
+        //가. (문자열,문자열)
+        $('h1').css('color','red');
+        $('h1').html('반갑습니다'); // 값 2개 넣을 수 없음
+
+        //나.(객체)
+        // $('h1').css({
+        //     'color':'red',
+        //     'backgroundColor':'orange',
+        //     'text-align':'center'            
+        // });
+        // css값을 정할 때 이름을 붙여 사용해도 되고 - 을 이용해도 된다 ex) text-align / textAlign
+        // 다만 이름을 문자열이 아닌 값으로 사용하는 경우는 자바스크립트 문법을 따름
+        // $('h1').css({
+        //     color:'red',
+        //     backgroundColor:'orange',
+        //     textAlign:'center'            
+        // });
+
+        //다.(함수)
+        var arryColor = ['red','blue','green'];
+        $('h1').css('color',function(index){
+            return arryColor[index];
+        });
+
+        //라.객체와 함수의 콤보
+        var backColor = ['pink','aqua','lightgreen'];
+        $('h1').css({
+            color:function(index){
+                return arryColor[index];
+            },
+            backgroundColor:function(index){
+                return backColor[index];
+            }
+        });
+
+
+        /////////////////////////////////////////////////////////////////
+        //2-2. getter 기능: 값을 꺼내 올때 사용
+        //기본 사용 방법은 setter 와 유사하다 => 매개값을 하나 생략한다. (반환값 문자열)
+        var value = $('h1').css('color');//객체가 여러개인 경우 첫번째 것만 반환
+        // alert(value);
+
+
+        /////////////////////////////////////////////////////////////////
+        //몇몇 메서드를 살펴 봅시다.
+        //attr메서드 = 속성을 부여할 때 사용하는 메서드
+        $('img').attr('src','http://placehold.it/100x100');
+
+        //객체로 부여할 수있음
+        $('img').attr({
+            'src':'http://placehold.it/100x100',
+            'alt':'test_image'
+        });
+        
+        //함수로 부여 가능
+        $('img').attr({
+            'src':function(index){
+                return 'http://placehold.it/100x'+(index+1)*100;
+            },
+            'alt':'test_image'
+        });
+
+        //값을 알아 올때 사용하는 메서드
+        var test = $('img').attr('src'); //src에 담겨있는 값을 변수에 담음
+        // alert(test);
+
+        /////////////////////////////////////////////////////////////////////
+        //html메서드: 노드객체에 문자열을 삽입할 때 사용 - 내부에 태그가 존재할 때 알아서 해석해서 사용한다.
+        //기본 setter
+        $('h2').html("바보");
+
+        //함수 사용
+        $('h2').html(function(index){
+            return "안녕히가세요"+(index+1);
+        });
+
+        //태그 요소 삽입
+        //$('h2').html("<img src='http://placehold.it/100x100'>안녕하세요");
+        // innerHTML과 같은 효과
+
+        //비교 text() 태그로 인식 x 문자열로만 인식함
+        // $('h2').text("<img src='http://placehold.it/100x100'>안녕하세요");
+        // js의 textContent와 같은효과
+
+
+        //기본 getter
+        var text1 = $('h2').html(); //첫번째 객체의 값만 추출한다
+        alert(text1);                // 가급적 객체를 선택할 때 세부적으로 선택하는 것이 좋다
+
+        var text2 = $('h2').text() // 전체 모든 내용을 텍스트로 추출
+        alert(text2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>-->
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <script>
+        //jquery를 사용하기 위해서 => jquery 객체 사용해야함
+        // jquery가 제공하는 모든 함수는 jquery통해서 사용해야 함
+        //jquery객체가 담긴 변수는 jQuery
+
+        window.load = function(){ // HTML의 모든 노드가 생성이 되고난 직후에 실행되는 함수
+            alert('온로드!');
+        };
+        jQuery(document).ready(function(){
+            alert('레디');
+        });
+        $(document).ready(function(){
+            alert('레디1');
+        });
+        $(document).ready(function(){
+            alert('레디2');
+        });
+        $(document).ready(function(){
+            alert('레디3');
+        });
+        //document.addEventListener("DOMcontentLoaded",function(){});
+
+    </script>
+</body>
+</html>

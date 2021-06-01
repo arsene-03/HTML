@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <h1>Hello 1</h1>
+    <h1>Hello 2</h1>
+    <h1>Hello 3</h1>
+    <h1>Hello 4</h1>
+    <h1>Hello 5</h1>
+    
+    <script>
+        //$('h1')//위 h1태그 5개 모드를 선택한 상황 =>배열
+        //제이퉈리가 배열을 관리하는 방법
+        //1. 직접 생성한 배열
+        var arr = ['red','blue','green','yellow','pink'];
+
+        //1-1
+        // $.each(arr,function (index,item){ //index => 배열의 인덱스 번호, item=> 배열의 요소
+        //     alert(index+":"+item) ;
+        // });
+        
+        //1-2
+        // $(arr).each(function (index,item) {
+        //     alert(index+":"+item) ;
+        // });
+
+        //2. 문서객체를 담은 배열
+        //문서객체를 담은 배열 모든 요소에 효과를 적요하려면 그냥 사용하면됨
+        $('h1').css('color','white');
+
+        //각각의 노드 객체에 다른 효과를 주고싶다면 each함수 사용
+        $('h1').each(function (index,item) {
+        //    $(item).css("backgroundColor",arr[index]);
+            $(this).css("backgroundColor",arr[index]);
+        });
+        
+
+
+    </script>
+</body>
+</html>

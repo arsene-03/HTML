@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <style>
+        *{
+
+        }
+        #header{
+
+        }
+        .title{
+
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header" class="title">안녕하세요</h1>
+    <script>
+        //제이쿼리는 기본적으로 두개의 파트로 구성됨
+        //1. 문서 객체를 선택
+        //2. 선택한 무서 객체에 효과(기능)을 적용
+        
+
+        //(1). 문서객체를 선택하는 방법
+        //기존 js로 문서선택하는 방법
+        document.getElementsByTagName('h1');
+        document.querySelector;
+
+        //제이쿼리에서 문서객체를 선택하는방법 => 
+        //1)CSS선택자 이용하는 방법을 따름
+        $("h1"); // $('선택자');
+        $('*'); //전체 선택
+        $('#header') // #id선택자
+        $('.title') // .class선택자
+
+        //2)자바 스크립트로 가져온 문서 객체를 이용하는 방법
+        var h1 = document.getElementById('header');
+        $(h1);
+
+        //추가)문서 객체를 생성할 수있다.
+        var p = document.createElement("p");//<p></p>
+        $('<p></p>'); //<p></p>
+
+        //예제
+        $('h1').css('color','red');
+        
+    </script>
+</body>
+</html>

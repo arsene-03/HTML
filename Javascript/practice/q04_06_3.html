@@ -45,9 +45,11 @@
             var table = document.getElementById("wordTable");
             var tr = document.createElement("tr");
             var td1 = document.createElement("td");
-            td1.innerHTML= table.rows.length-1;
+            td1.setAttribute("class","numtb")
+            
             var td2 = document.createElement("td");
             td2.setAttribute("colspan",2);
+            td2.setAttribute("class","engtb");
             td2.innerHTML=engWord;
             var td3 = document.createElement("td");
             td3.setAttribute("colspan",2);
@@ -56,25 +58,40 @@
             tr.appendChild(td1);
             tr.appendChild(td2);
             tr.appendChild(td3);
+            givnum();
         }
         function removeLastWord(){ // 마지막 단어 삭제
             var lastDel = document.getElementById("wordTable").lastChild;
             lastDel.remove();
-            td1.innerHTML= table.rows.length-1;
+            givnum();
         }
         function removeNumWord(){ // 번호로 단어 삭제
             var num = parseInt(prompt("숫자를 입력하세요."));
             var numDel = document.getElementById("wordTable").rows;
             numDel[num+1].remove();
+            givnum();
+
         }
         function removeEachText(){
-            //var eword = prompt("단어를 입력하세요.");
-            var eachWordDel = document.getElementById("wordTable").rows;
-            for(i=2;i<eachWordDel.length-2;i++){
-                console.log(eachWordDel[i]);
-            }
+            var eword = prompt("단어를 입력하세요.");
+            var eachWordDel = document.getElementsByClassName("engtb");
+            var eachWordTR = document.getElementsByTagName("tr");
             
+            for(i=0;i<eachWordDel.length;i++){
+                var eachDel = eachWordDel[i].innerHTML;
+                if(eword == eachDel){
+                    eachWordTR[i+2].remove();
+                    givnum();
 
+                    break;
+                }
+            }
+            }
+            function givnum(){
+                var td1 = document.getElementsByClassName("numtb");
+                for(i=0;i<td1.length;i++){
+                    td1[i].innerHTML = i+1;
+                }
             }    
     </script>
 </body>

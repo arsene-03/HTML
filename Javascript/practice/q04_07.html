@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <table border="1" id="calendar">
+        <tr>
+            <th>
+                <input type="date" name="DateChoice" id="DateChoice" onchange="setDate()">
+            </th>
+        </tr>
+            <th id="htable">
+                aaa
+            </th>
+        <tr>
+        </tr>
+
+    </table>
+    <script>
+        var 
+          arrMonths = [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ] , 
+          arrWeeks  = [ "일", "월", "화", "수", "목", "금", "토" ] , 
+          totalDays  = [ "31", "0", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31" ] 
+          ; 
+        
+        var 
+          d  =  new Date() , 
+          year   = d.getFullYear() , 
+          month = d.getMonth() , 
+          day    = d.getDate() , 
+          week = d.getDay() , 
+          txt = "aa" 
+          ; 
+          
+        function setDate(){
+            var hdate = document.getElementById("DateChoice");
+            var hyear = hdate.value.split("-")[0];
+            var hmonth = hdate.value.split("-")[1];
+            var htable = document.getElementById("htable");
+            htable.innerHTML = hyear+"년"+hmonth+"월";
+
+            for(i;i<49;i++){
+                document.createElement(td)
+                
+            }
+        }
+    </script>
+</body>
+</html>
