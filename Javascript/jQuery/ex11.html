@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한스크롤</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(event){ //스크롤 이벤트 발생시 함수동작
+                var scrollDistance = $(window).scrollTop(); // 스크롤된 거리
+                var viewSize = $(window).height(); // 화면의 높이
+                var documentSize = $(document).height(); //문서의 높이
+            
+                if((scrollDistance+viewSize)==documentSize){
+                    for(var i=0;i<10;i++){
+                        $('<h1></h1>').html('무한인사 - 안녕하세요').appendTo('body');
+                    }
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+    <h1>무한 인사 - 안녕하세요</h1>
+</body>
+</html>

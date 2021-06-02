@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+</head>
+<style>
+    .box{
+        width: 500px;
+        height: 300px;
+        border: 1px solid red;
+    }
+</style>
+<body>
+    <h1 id="move">태그가 움직입니다.</h1>
+
+    <div class="box">
+        <h1>안녕하세요</h1>
+    </div>
+    <script>
+        //문서 객체의 이동 및 삽입
+
+        //문서 객체의 삽입
+
+        
+        // before('대상') : 대상의 형제요소 로서 앞부분에 끼워넣기
+        //-----------------------------------------------
+        // prepand('대상') : 대상의 내부에 앞부분에 끼워 넣기
+        //'대상'을 기준으로 문서 객체를 끼워 넣을 수가 있다.
+        // append('대상') : 대상의 내부에 뒷부분에 끼워넣기
+        //-----------------------------------------------
+        // after('대상') : 대상의 형제요소 로서 뒷부분에 끼워넣기
+    
+        //       요소                                      대상(기준)  => 메서드 체이닝에 유리해서 더 많이 사용됨
+        $('<h2></h2>').html('안녕 -insertBefore').insertBefore($('div'));
+        $('<h2></h2>').html('안녕 -prependTo').prependTo($('div'));
+        $('<h2></h2>').html('안녕 -appendTo').appendTo($('div'));
+        $('<h2></h2>').html('안녕 -insertAfter').insertAfter($('div'));
+
+
+        //    대상(기준)               요소
+        $('div').before('<h3>반갑습니다. - before</h3>');
+        $('div').prepend('<h3>반갑습니다. - prepend</h3>');
+        $('div').append('<h3>반갑습니다. - append</h3>');
+        $('div').after('<h3>반갑습니다. - after</h3>');
+
+        $('#move').insertAfter($('div'));
+    </script>
+</body>
+</html>

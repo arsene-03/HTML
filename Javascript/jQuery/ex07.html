@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <style>
+        .box{
+            border: 1px solid red;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h1>안녕하세요1</h1>
+        <h1>안녕하세요2</h1>
+        <h1>안녕하세요3</h1>
+    </div>
+    <script>
+        //문서 객체를 제거하는 메서드 : remove()
+        $(document).ready(function(){
+            $('h1').first().remove();
+        });
+
+        //문서 객체 내부를 비우는 함수 : empty()
+        $(document).ready(function(){
+            $('.box').empty();
+        });
+    </script>
+</body>
+</html>

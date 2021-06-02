@@ -6,54 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        button{
-            
+        td,th{
+            border: 1px solid black;
+        }
+        td{
+            width: 25px;
+            height: 25px;
+            text-align: center;
+
+        }
+        tr td:nth-child(1){
+            color: red;
+        }
+        tr td:nth-child(7){
+            color: blue;
         }
     </style>
 </head>
+
 <body>
     
-    <table border="1" id="calendar">
+    <table id="calendar">
         <tr>
-            <th>
-                <input type="date" name="DateChoice" id="DateChoice" onchange="setDate()">
+            <th colspan="7">
+                <input type="month" name="DateChoice" id="DateChoice" onchange="setDate()">
             </th>
         </tr>
-            <th id="htable">
-                aaa
-            </th>
         <tr>
+            <td><input type="button" value="<" onclick="prevMonth()"></td>
+            <th id="htable" colspan="5"></th>
+            <td>
+            <input type="button" value=">" onclick="nextMonth()">
+            </td>
+        </tr>
+        <tr>
+            <td>일</td>
+            <td>월</td>
+            <td>화</td>
+            <td>수</td>
+            <td>목</td>
+            <td>금</td>
+            <td>토</td>
         </tr>
 
     </table>
     <script>
-        var 
-          arrMonths = [ "1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월" ] , 
-          arrWeeks  = [ "일", "월", "화", "수", "목", "금", "토" ] , 
-          totalDays  = [ "31", "0", "31", "30", "31", "30", "31", "31", "30", "31", "30", "31" ] 
-          ; 
         
-        var 
-          d  =  new Date() , 
-          year   = d.getFullYear() , 
-          month = d.getMonth() , 
-          day    = d.getDate() , 
-          week = d.getDay() , 
-          txt = "aa" 
-          ; 
-          
-        function setDate(){
-            var hdate = document.getElementById("DateChoice");
-            var hyear = hdate.value.split("-")[0];
-            var hmonth = hdate.value.split("-")[1];
-            var htable = document.getElementById("htable");
-            htable.innerHTML = hyear+"년"+hmonth+"월";
+        var today = new Date(); //현재의 날짜
+        var todayYear = today.getFullYear(); //년
+        var todayMonth = today.getMonth()+ 1; //월
+        var calendar = document.getElementById("calendar");
+        document.getElementById('htable').innerHTML = todayYear+"년"+todayMonth+"월"
 
-            for(i;i<49;i++){
-                document.createElement(td)
-                
+        function buildCalendar(){
+            
+            console.log(todayYear);
+            var firstDate = new Date(todayYear, todayMonth-1, 1);
+            var lastDate = new Date(todayYear, todayMonth,0);
+            var day = firstDate.getDay();
+            var week = Math.ceil(lastDate.getDate()/7) + 1;
+            var htableText = todayYear+"년"+todayMonth+"월";
+            var leftDays = 7;
+            var setDays = 1;
+            let nextMonthDate = 1;
+            for(i=1;i<week;i++){
+                let row = calendar.insertRow();
+                while(day!=0){
+                    row.insertCell().innerHTML = "";
+                    day -= 1;
+                    leftDays -=1;
+                }
+				while(leftDays != 0){
+					if(setDays > lastDate.getDate()){
+						row.insertCell().innerHTML = nextMonthDate;
+						leftDays -= 1;
+						nextMonthDate += 1;
+					}else{
+						row.insertCell().innerHTML = setDays;
+						setDays +=1;
+						leftDays -= 1;
+					} 
+                }
+                leftDays = 7;
+            }
+            setDays -=1;
+            if(setDays != lastDate.getDate()){
+                let row = calendar.insertRow();
+				    while(setDays != lastDate.getDate()){
+					    setDays++;
+					    leftDays--;
+					    row.insertCell().innerHTML = setDays;
+				    }
+				    while(leftDays != 0){
+					    row.insertCell().innerHTML = nextMonthDate;
+					    nextMonthDate++;
+					    leftDays--;
+				    }
+			    }
+		        document.getElementById("htable").innerHTML= htableText;
+            }
+        buildCalendar();
+
+        function deleteCalendar(){
+            while(calendar.rows.length>3){
+                calendar.deleteRow(3);
             }
         }
+        function prevMonth(){
+			todayMonth = todayMonth -1;
+			if(todayMonth == 0){
+				todayMonth = 12;
+				todayYear -= 1;
+			}
+			deleteCalendar();
+			today = new Date(todayYear,todayMonth-1);
+			buildCalendar();
+		}
+		function nextMonth(){
+			todayMonth +=1;
+			if(todayMonth == 13){
+				todayMonth = 1;
+				todayYear = todayYear +1;
+			}
+			deleteCalendar();
+			today = new Date(todayYear,todayMonth - 1);			
+			buildCalendar();
+		}
+        function setDate(){
+            var hdate = document.getElementById("DateChoice");
+            todayYear = hdate.value.split("-")[0];
+            todayMonth = hdate.value.split("-")[1];
+            deleteCalendar();
+            today = new Date(todayYear,todayMonth - 1);			
+			buildCalendar();
+        }
+        
     </script>
 </body>
 </html>

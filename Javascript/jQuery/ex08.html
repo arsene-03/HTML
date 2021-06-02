@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <style>
+        .reverse{
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>안녕하세요1</h1>
+    <h1>안녕하세요2</h1>
+    <h1>안녕하세요3</h1>
+    
+    <script>
+        //이벤트 - 기본 사용 방법
+        //1. 어떤 이벤트가 발생했는가?
+        //2. 이벤트가 발행했을때 어떤 동작을 할 것인가?
+
+        //이벤트를 위한 함수 on
+        $('h1').on('click',function(event){ //이벤트 발생 시 작동할 함수
+            alert('클릭');
+        });
+
+        $('h1').on('click',function(event){
+            // $(event.currentTarget).html(function(index,html){
+            //     return html+"+";
+            // });
+            $(this).html(function(index,html){
+                    return html+"+";
+             });
+        })
+        
+        //하나의 객체에 여러 이벤트를 만들고 싶다면 : 객체 { 이름:값}
+        $('h1').on({
+            "mouseenter":function(){
+                $(this).addClass('reverse');
+            },
+            "mouseleave":function(){
+                $(this).removeClass('reverse');
+            }
+        });
+
+        //이미 지정된 이벤트를 제거하는 함수 off
+        setTimeout(function(){
+            $('h1').off('click');
+        }, 5000);
+
+        //이벤트를 단 한번만 실행 할 수 있도록 하는 함수 : one
+        $('h1').one('dblclick',function(event){
+            alert('더블클릭');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+</head>
+<style>
+    .text-red{
+        color: red;
+    }
+    .center{
+        text-align: center;
+    }
+</style>
+<body>
+    <h1 class="test">안녕하세요</h1>
+    <script>
+        $('h1').css('속성이름'); // 스타일에 적용된 속성의 값을 읽어 오기
+        $('h1').css('속성이름','값'); // 스타일에 적용될 속성의 값을 지정하기
+
+        $('h1').attr('속성이름');//태그 요소에서 꺼내올 속성의 이름
+        $('h1').attr('속성이름','값');//태그 요소에서 적용될 속성의 값
+
+        $('h1').attr('class','text-red'); // h1 요소의 클래스 속성 text-red라는 속성을 부여함(기존것을 지우고 대체)
+        $('h1').removeAttr('class');
+
+        //속성 => class만의 사용법
+        //클래스 속성 '추가' 메서드 : addClass
+        $('h1').addClass('text-red'); // 클래스 속성에 값을 '추가' 한다
+
+        
+        //클래스 속성에 특정 값이 있는지 판단하는 메서드 : hasClass()
+        var result1 = $('h1').hasClass('text-red'); //결과는 true또는 false로 나타냄
+        $('<h2></h2>').html(result1).appendTo('body');
+        
+        var result2 = $('h1').hasClass('header'); //결과 true
+        $('<h2></h2>').html(result2).appendTo('body');
+        //false인 결과를 화면에 출력 하고 싶다면
+        $('<h2></h2>').html(result2.toString()).appendTo('body');
+
+        if(result2){ // 조건에 사용하는 경우에는 문자열 변환 필요 없음
+
+        }
+        
+        //클래스 속성 제거하는 메서드 : removeClass
+        setTimeout(function(){
+            $('h1').removeClass('text-red');
+        },3000);
+
+        // 클래스 속성에 지정된 값이 없다면 넣고 있다면 뺴는메서드
+        setInterval(function(){
+            $('h1').toggleClass('center');
+        },2000)
+
+    </script>
+</body>
+</html>

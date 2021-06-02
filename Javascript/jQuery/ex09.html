@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <style>
+        h1[abc]{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>안녕하세요</h1>
+    <a href="http://www.naver.com">네이버</a>
+
+    <script>
+        //간단한 이벤트 연결 방식
+        $('h1').click(function(event){
+    //  $('h1').on('click',function(event){});
+            alert('안녕하세요_A');
+            $(event.currentTarget).html('click!!');
+            $(this).css('color','red');
+            $(this).attr('abc','def');
+        });
+
+        $('h1').click(100,function(event){
+            //-> 이벤트 속성값
+            alert(event.data); 
+        });
+
+        //기본기능 차단
+        $('a').click(function(event){
+            $(this).html('카카오');
+            $(this).css({
+                "color":"yellow",
+                "backgroundColor":"brown"
+            });
+            event.preventDefault(); // 태그의 기본차단
+            event.stopPropagation(); // 이벤트가 통과되지 못하도록 막는 기능
+        });
+        $('body').click(function(event){
+            $(this).css("backgroundColor",'orange');
+        })
+        
+    </script>
+</body>
+</html>

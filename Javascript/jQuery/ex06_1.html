@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="../jQuery/img/cherry-blossom-6282234_640.jpg" alt="">
+    <img src="../jQuery/img/daffodils-6292667_640.jpg" alt="">
+    <img src="../jQuery/img/giraffe-6271050_640.jpg" alt="">
+    <img src="../jQuery/img/poppy-5199556_640.jpg" alt="">
+    <img src="../jQuery/img/tulips-6284729_640.jpg" alt="">
+
+    <script>
+        setInterval(function(){
+            $('img').first().appendTo('body');
+        },2000)
+    </script>
+</body>
+</html>
