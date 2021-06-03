@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자정의</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+    </div>
+    <script>
+        //사용자 정의 애니메이션함수: animate()
+
+        //매개값1: 변화의 모양을 보여줄 객체
+        //위치변환 : top, left, bottom, right
+        //크기변환 : width, height
+        //모양변환 : margin, padding
+        //투명도   : opacity
+        //상대적 크기변경 가능 : '+=100'
+
+        //매개값2: 변화시간
+        // slow, normal, fast, 밀리초
+
+        //매개값3: 변화효과
+        //linear, swing
+
+        //매개값4: 함수 -> 효과가 진행된 후 작동하는 함수
+        // $('div.page').click(function(){
+        //     $(this).animate({
+        //         top:'+=100',
+        //         width:'+=100',
+        //         opacity:0.2
+        //     },1500,)
+        // });
+
+        //애니메이션 함수는 연속 실행이 가능
+        //각각의 애니메이션은 대기열에 들어가서 순서대로 대기를 한다.
+        // $('div.page').click(function(){
+        //     $(this).animate({
+        //         left:'+=50'
+        //     },2000,).animate({
+        //         top:'+=50'
+        //     },2000).animate({
+        //         height:'+=50'
+        //     },2000)
+        // });
+
+        //클릭을 연달아 실행하면
+        //사용자가 느끼는 시간과 애니메이션이 진행되는 시간의 괴리가 발생
+        //애니메이션 대기열을 삭제시켜야 함: clearQueue()
+        //애니메이션 자체를 중단 할때 사용하는 함수 : stop()
+        //  -매개값1 true/false : clearQueue를 동작시킬것인가 말것인가?
+        //  -매개값2 true/false : 애니메이션 중단 후 현재 위치를 어디로 둘 것인가?/ 애니메이션 중단 후 최종형태는 어떻게 할 것인가
+        //                                                                  
+        // $('div.page').click(function(){
+        //     $(this).stop(false,true);
+        //     //$(this).clearQueue();
+        //     $(this).animate({
+        //         left:'+=800',
+        //     },10000)
+        // });
+
+        //애니메이션들 사이에 대기시간을 주는 함수: delay()
+        $('div.page').click(function(){
+            $(this).animate({
+                left:'+=100'
+            },1000).delay(1000)
+            .animate({
+                left:'+=100'
+            },1000)
+        })
+    </script>
+</body>
+</html>

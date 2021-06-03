@@ -12,7 +12,7 @@
     }
 </style>
 <body>
-    <form action="../practice/q07_01_list.html" method="post">
+    <form action="#" method="get" id="regBoard">
     <fieldset>
         <legend>게시글 작성</legend>
         <label for="name">작성자</label>
@@ -23,10 +23,37 @@
         <br>
         <label for="textArea">글 내용</label><br>
         <textarea name="textArea" id="textArea" cols="30" rows="10" placeholder="좋아요! 구독!을 눌러주세요."></textarea>
+        <input type="hidden" name="indexhd" id="indexhd">
     </fieldset>
-    <input type="submit" value="게시물 등록" id="regbox">
+    <a href="../practice/q07_01_list.html" onclick="regBoard()"><input type="submit" value="게시물 등록" id="regbox" onclick="regBoard()"></a> 
+    <input type="url" name="" id="">
     </form>
-    <a href="../practice/q07_01_list.html"><input type="button" value="게시물로 돌아가기"></a>
-    
+    <input type="button" value="게시판으로 돌아가기" onclick="backlist()">
+    <script>
+        var boardList = [];
+        
+        function backlist(){
+            confirm('게시물 리스트로 돌아가시겠습니까?');
+            console.log(form.value)
+        }
+        function regBoard(){
+            
+            var adr = location.href;
+            var values = adr.split("?")[1];
+            var users = values.split("&");
+            var userInfo = {
+                userName : users[0].split("=")[1],
+                userTitle : users[1].split("=")[1],
+                userText : users[2].split("=")[1],
+                userindex : users[3].split("=")[1]
+            }
+            boardList.push(userInfo);
+            console.log(boardList);
+            localStorage.setItem('boardList',JSON.stringify(boardList));
+            a
+            
+        }
+        
+    </script>
 </body>
 </html>

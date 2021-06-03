@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        #canvas{
+            background-color: gray;
+            width: 600px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        .innerBox{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지 슬라이더 준비</h1>
+    <div id="canvas">
+        <div class="innerBox"></div>
+        <div class="innerBox"></div>
+        <div class="innerBox"></div>
+        <div class="innerBox"></div>
+        <div class="innerBox"></div>
+    </div>
+    <h1>이미지 슬라이더 준비</h1>
+    <script>
+        $(document).ready(function(){
+            $('.innerBox').each(function(index){
+                $(this).css({
+                    left:index*90,
+                    top:index*90
+                })
+            });
+        });
+    </script>
+</body>
+</html>

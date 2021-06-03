@@ -7,7 +7,7 @@
     <title>리스트 페이지</title>
 </head>
 <body>
-    <table border="1">
+    <table border="1" id="mainTable">
         <tr>
             <th>글 번호</th>
             <th>글 제목</th>
@@ -17,7 +17,7 @@
         <tr>
             <td colspan="2">
                 <form action="../practice/q07_01_make.html" method="post">
-                    <input type="submit" value="글 작성">
+                    <input type="submit" value="글 작성" onclick="addBoard()">
                 </form>
                 
             </td>
@@ -28,7 +28,21 @@
     </table>
     <script>
         function addBoard(){
+            var userBoard = JSON.parse(localStorage.getItem('userBoard'));
+                
 
+            var mainTable = document.getElementById(mainTable);
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+
+            var td2 = document.createElement("td");
+            td2.innerHTML = localStorage.getItem('userTitle');
+            var td3 = document.createElement("td");
+            var td4 = document.createElement("td");
+
+            mainTable.appendChild(tr);
+            tr.appendChild(td1);
+            tr.appendChild(td2);
         }
     </script>
 </body>

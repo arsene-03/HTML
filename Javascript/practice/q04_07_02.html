@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캘린더(선생님)</title>
+    <script src="./calandar.js"></script>
+    <style>
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="7" id="head">년도</th>
+                </tr>
+                <tr>
+                    <th>일</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">
+                        <input type="month" name="selectMonth" id="selectMonth" onchange="selectMonth()">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

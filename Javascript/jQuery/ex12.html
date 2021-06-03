@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <input type="button" value="나타내기" id="showbtn">
+    <input type="button" value="사라지기" id="hidebtn">
+    <input type="button" value="토글" id="togglebtn">
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta libero enim corporis nesciunt blanditiis, nemo aspernatur nostrum, beatae voluptas exercitationem minima harum quo, vero perspiciatis quibusdam iste! Aperiam, dolorem nihil.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cum, consequuntur nesciunt impedit cumque beatae natus officia aut nisi? Tempore qui labore consequatur ex aspernatur omnis quisquam distinctio reprehenderit odit?</p>
+
+    </div>
+    <script>
+        //효과
+        //제이쿼리가 제공하는 시각효과를 보여주는 함수
+        //기본 제공 3가지동작 -> 사용자 정의동작
+        //1. 문서객체의 확대, 축소 -> show(), hide()
+        //2. 슬라이드 효과 -> slidedown(), slideup()
+        //3. 페이드 효과 -> fadein(), fadeout()
+
+        //위 3가지 효과는 보여주기, 사라지기 2가지 동작으로 이루어져 있음
+
+        //각 함수는 매개값을 전달해 줄수가 있다.
+        //첫번째 매개값 : 진행속도
+        //두번째 매개값 : 함수 => 효과가 진행된 후 사용될 함수
+        //세번째 매개값 : 전환 효과 css 애니메이션 easing
+
+        // $('input#showbtn').click(function(){
+        //     $('div.page').show('slow');
+        // });
+        // $('input#hidebtn').click(function(){
+        //     $('div.page').hide('slow');
+        // });
+        $('input#showbtn').click(function(){
+            $('div.page').fadeIn('slow');
+        });
+        $('input#hidebtn').click(function(){
+            $('div.page').fadeOut('slow');
+        });
+
+        //나타남과 사라짐 두가지 동작을 하나로 묶은 함수
+        // $('input#togglebtn').click(function(){
+        //     $('div.page').toggle('slow');
+        // });
+        // $('input#togglebtn').click(function(){
+        //     $('div.page').slideToggle('slow');
+        // });
+        $('input#togglebtn').click(function(){
+            $('div.page').fadeToggle('slow');
+        });
+
+    </script>
+</body>
+</html>
