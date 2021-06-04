@@ -7,12 +7,13 @@
     <title>글 작성</title>
 </head>
 <style>
-    form #regbox{
+    #regbox{
         float: left;
     }
+    
 </style>
 <body>
-    <form action="#" method="get" id="regBoard">
+    <form action="#" method="get" id="boardInput">
     <fieldset>
         <legend>게시글 작성</legend>
         <label for="name">작성자</label>
@@ -21,39 +22,42 @@
         <label for="title">글 제목</label>
         <input type="text" name="title" id="title" placeholder="첫번째">
         <br>
-        <label for="textArea">글 내용</label><br>
-        <textarea name="textArea" id="textArea" cols="30" rows="10" placeholder="좋아요! 구독!을 눌러주세요."></textarea>
-        <input type="hidden" name="indexhd" id="indexhd">
+        <label for="contents">글 내용</label><br>
+        <textarea name="contents" id="contents" cols="30" rows="10" placeholder="좋아요! 구독!을 눌러주세요."></textarea>
+
     </fieldset>
-    <a href="../practice/q07_01_list.html" onclick="regBoard()"><input type="submit" value="게시물 등록" id="regbox" onclick="regBoard()"></a> 
-    <input type="url" name="" id="">
     </form>
+    <input type="button" value="게시물 등록" id="regbox" onclick="regBoard()">
     <input type="button" value="게시판으로 돌아가기" onclick="backlist()">
     <script>
-        var boardList = [];
-        
-        function backlist(){
-            confirm('게시물 리스트로 돌아가시겠습니까?');
-            console.log(form.value)
+        var boardList = JSON.parse(localStorage.getItem('boardInfo'));
+
+        window.onload = function(){
+            if(boardList == undefined){  
+                boardList = [];    
+            }
         }
         function regBoard(){
-            
-            var adr = location.href;
-            var values = adr.split("?")[1];
-            var users = values.split("&");
-            var userInfo = {
-                userName : users[0].split("=")[1],
-                userTitle : users[1].split("=")[1],
-                userText : users[2].split("=")[1],
-                userindex : users[3].split("=")[1]
+            var boardDate = new Date();
+            var date1 =boardDate.toLocaleDateString();
+            var date2 =boardDate.toLocaleTimeString();
+            console.log(date1)
+            var b = document.getElementById('boardInput');
+            var eachBoard = {
+                name : b.name.value,
+                title : b.title.value,
+                contents : b.contents.value,
+                date : date1+' '+date2
             }
-            boardList.push(userInfo);
-            console.log(boardList);
-            localStorage.setItem('boardList',JSON.stringify(boardList));
-            a
-            
+            console.log(eachBoard);
+            boardList.push(eachBoard);
+            localStorage.setItem('boardInfo',JSON.stringify(boardList));
+            alert('게시물 등록완료');
+            backlist();
         }
-        
+        function backlist(){
+            location.href = 'q07_01_list.html'
+        } 
     </script>
 </body>
 </html>

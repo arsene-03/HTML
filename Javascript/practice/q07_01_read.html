@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시물 읽기</title>
+</head>
+<body>
+    <form action="#" method="get" id="boardInput">
+        <fieldset>
+            <legend>게시글 작성</legend>
+            <label for="num">글 번호</label>
+            <input type="text" name="num" id="num" disabled>
+            <br>
+            <label for="name">작성자</label>
+            <input type="text" name="name" id="name">
+            <br>
+            <label for="title">글 제목</label>
+            <input type="text" name="title" id="title">
+            <br>
+            <label for="contents">글 내용</label><br>
+            <textarea name="contents" id="contents" cols="30" rows="10"></textarea>
+    
+        </fieldset>
+        </form>
+    <input type="button" value="게시물 수정" id="regbox" onclick="regBoard()">
+    <input type="button" value="게시판으로 돌아가기" onclick="backlist()">
+    <script>
+        var boardList = JSON.parse(localStorage.getItem('boardInfo'));
+        var index = location.href.split('=')[1]-1;
+        var board = boardList[index];
+
+        var numBox = document.getElementById('num');
+        var nameBox = document.getElementById('name');
+        var titleBox = document.getElementById('title');
+        var contentsBox = document.getElementById("contents");
+
+
+        window.onload = function(){
+            numBox.value = index+1;
+            nameBox.value = board.name;
+            titleBox.value = board.title;
+            contentsBox.value = board.contents;
+        }
+        function regBoard(){
+            var boardDate = new Date();
+            var b = document.getElementById('boardInput');
+            let eachBoard = {
+                name : b.name.value,
+                title : b.title.value,
+                contents : b.contents.value,
+                date : boardDate
+            }
+            boardList[index] =eachBoard;
+            localStorage.setItem('boardInfo',JSON.stringify(boardList));
+            alert('게시물 수정완료');
+            backlist();
+        }
+        function backlist(){
+            location.href = 'q07_01_list.html'
+        }
+    </script>
+</body>
+</html>
