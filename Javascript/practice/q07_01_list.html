@@ -5,44 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리스트 페이지</title>
+    <style>
+        *{
+            text-align: center;
+            
+        }
+        thead,tfoot{
+            background-color:darkgoldenrod;
+            color: white;
+        }
+        input{
+            color: white;
+            background-color:olivedrab;
+            
+        }
+        th:nth-child(1){
+            width: 60px;
+        }
+        td{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        td:nth-child(1){
+            cursor: pointer;
+            font-weight: 550;
+            
+        }
+        td:nth-child(1):hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        
+    </style>
 </head>
 <body>
-    <table border="1" id="mainTable">
-        <tr>
-            <th>글 번호</th>
-            <th>글 제목</th>
-            <th>작성자</th>
-            <th>작성일</th>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <form action="../practice/q07_01_make.html" method="post">
-                    <input type="submit" value="글 작성" onclick="addBoard()">
-                </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>글 번호</th>
+                <th>글 제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody id="mainTable">
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="글 작성" onclick="makeBoard()">
+                </td>
+                <td colspan="2">
+                    <input type="button" value="전체 글 삭제" onclick="removeAllBoard()">
+                </td>
                 
-            </td>
-            <td colspan="2">
-                <input type="button" value="전체 글 삭제">
-            </td>
-        </tr>
+            </tr>
+        </tfoot>
     </table>
+    <br>
+    
+    
     <script>
-        function addBoard(){
-            var userBoard = JSON.parse(localStorage.getItem('userBoard'));
+        window.onload = function(){
+            var boardList = JSON.parse(localStorage.getItem('boardInfo'));
+            if(boardList != undefined){
+                makeList();
+            }
+        }
+        function makeList(){
+            var boardList = JSON.parse(localStorage.getItem('boardInfo'));
+            var mainTable = document.getElementById('mainTable');
+            for(var i=0;i<boardList.length;i++){
+                var index = i+1;
                 
-
-            var mainTable = document.getElementById(mainTable);
-            var tr = document.createElement("tr");
-            var td1 = document.createElement("td");
-
-            var td2 = document.createElement("td");
-            td2.innerHTML = localStorage.getItem('userTitle');
-            var td3 = document.createElement("td");
-            var td4 = document.createElement("td");
-
-            mainTable.appendChild(tr);
-            tr.appendChild(td1);
-            tr.appendChild(td2);
+                var tr = document.createElement('tr');
+                var td1 = document.createElement('td'); // 글번호
+                td1.innerHTML = index;
+                td1.addEventListener("click",function(e){ // e: 이벤트 객체
+                    location.href = 'q07_01_read.html?index='+e.currentTarget. innerHTML;
+                },false)
+                var td2 = document.createElement('td'); // 글 제목
+                td2.innerHTML = boardList[i].title;
+                var td3 = document.createElement('td'); // 작성자
+                td3.innerHTML = boardList[i].name;
+                var td4 = document.createElement('td'); // 작성일
+                td4.innerHTML = boardList[i].date;
+                mainTable.appendChild(tr);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                boardList[i].number = index-1;
+                localStorage.setItem('boardInfo',JSON.stringify(boardList));
+            }
+        }
+        function makeBoard() {
+            location.href = 'q07_01_make.html'
+        }
+        function removeAllBoard(){
+            var a = confirm("정말 삭제 하시겠습니까?")
+            if(a==true){
+                localStorage.clear();
+                alert("전체 글이 삭제되었습니다.")
+                location.href = 'q07_01_list.html'
+            }
         }
     </script>
 </body>
