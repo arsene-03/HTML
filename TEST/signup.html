@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="pageTitle">회원가입</div>
+        <form action="./login.html" method="post">
+            <fieldset class="requiredBox">
+                <legend>필수입력사항</legend>
+                아이디*<br>
+                <input type="text" name="newUserId" required><hr>
+                비밀번호*<br>
+                <input type="password" name="newUserPwd" required><hr>
+                비밀번호 확인*<br>
+                <input type="password" name="userPwdChk" required><hr>
+                이름*<br>
+                <input type="text" name="newUserName" required><hr>
+                이메일*<br>
+                <input type="email" name="newUserEamil" required><hr>
+                전화번호*<br>
+                <input type="tel" name="newUserTel" required>
+            </fieldset>
+            <fieldset class="subBox">
+                <legend>부가입력사항</legend>
+                <table>
+                    <tr>
+                        <td class="tabTitle">나이</td>
+                        <td>
+                            <input type="number" id="age" name="age">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+                    <tr>
+                        <td class="tabTitle">성별</td>
+                        <td>
+                            <input type="radio" name="gender" value="male">남성
+                            <input type="radio" name="gender" value="female">여성
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+                    <tr>
+                        <td class="tabTitle">취미</td>
+                        <td>
+                            <input type="checkbox" name="hobby" value="footBall">축구
+                            <input type="checkbox" name="hobby" value="game">게임
+                            <input type="checkbox" name="hobby" value="reading">독서<br>
+                            <input type="checkbox" name="hobby" value="fishing">낚시
+                            <input type="checkbox" name="hobby" value="basketBall">농구
+                            <input type="checkbox" name="hobby" value="walk">산책
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+                    <tr>
+                        <td class="tabTitle">직업</td>
+                        <td>
+                            <select name="job" id="job">
+                                <option value="doctor">의사</option>
+                                <option value="inventor">발명가</option>
+                                <option value="programmer">프로그래머</option>
+                                <option value="singer">가수</option>
+                                <option value="policeOfficer">경찰</option>
+                                <option value="student">학생</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+                    <tr>
+                        <td class="tabTitle">자기소개</td>
+                        <td>
+                        <textarea name="introduce" id="introduce" cols="20" rows="7"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+            <br>
+            <input type="submit" value="회원가입">
+            <input type="reset" value="다시작성">
+            
+        </form>
+    </div>
+</body>
+</html>

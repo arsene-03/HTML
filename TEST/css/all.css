@@ -1,0 +1,63 @@
+body{
+    background-color: darkkhaki;
+}
+#wrap {
+    margin: 0 auto;
+    border: 1px solid black;
+    font-family: 'Dokdo', cursive;
+    width: 90vh;
+    background-color: chartreuse;
+    text-align: center;
+}
+.pageTitle{
+    text-align: center;
+    font-size: 60px;
+    color: navy;
+}
+.mainbuts {
+    background-color: forestgreen;
+    color: white;
+    font-family: 'Dokdo', cursive;
+    padding: 0;
+    font-size: 20px;
+    border-radius: 5px;
+}
+input{
+    background-color: turquoise;
+    border-radius: 5px;
+    border: 1px;
+    border-color: black;
+}
+a{
+    text-decoration: none;
+}
+.linkBox {
+    color: white;
+    font-family: 'Dokdo', cursive;
+    font-size: 30px;
+}
+fieldset{
+    display: inline;
+    width: 40%;
+}
+table {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.tabTitle {
+    width: 40px;
+}
+.requiredBox input{
+    width: 60%;
+ 
+}
+.subBox #age{
+    width: 30%;
+}
+.subBox #job{
+    width: 100%;
+}
+.subBox textarea{
+    width: 100%;
+}
