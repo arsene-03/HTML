@@ -23,7 +23,7 @@
         </select>
         <input type="button" value="result" onclick="play()">
         </form>
-        <table border="1">
+        <table border="1" id="table">
 
         </table>
     </div>
@@ -31,14 +31,26 @@
 <script>
     function play(){
         
-        var table = document.getElementsByTagName("table")[0];
+
+        var table = document.getElementById("table");
         
-        console.log(table.hasChildNodes);
+        var dtr = document.getElementsByClassName("aa")[0];
+
+        if(dtr != null){
+            dtr.remove();
+        }
+
         var dan = parseInt(document.getElementById("gugudan").value);
         console.log(dan);
         var gugudan = "";
-        
+    
         var tr = document.createElement("tr");
+        tr.classList.add("aa");
+        console.log(table.hasAttribute("id"))
+        if(table.hasAttribute("id")) {
+            document.getElementsByTagName("td").remove;
+            
+        }
         
         var td = document.createElement("td");
         
@@ -50,10 +62,6 @@
             tr.appendChild(td);
             table.appendChild(tr);
     }
-    
-    </script>
-      
- 
 </script>
 </html>
 

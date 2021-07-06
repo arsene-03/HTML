@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 상세보기 페이지</title>
+</head>
+<link rel="stylesheet" href="./css/all.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+    </style>
+<script src="./script/script"></script>
+<body>
+    <div id="wrap">
+        <div class="pageTitle">게시글 상세보기</div>
+        <form action="./board.html" method="get" name="frm">
+        <table>
+        </table>
+        <input type="button" value="글 수정" onclick="modify()">
+        <input type="button" value="글 삭제" onclick= "remove()">
+        <input type="button" value="목록으로돌아가기" onclick="location.href='4board.html'">
+    </form>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var index = location.href.split('=')[1];
+        console.log(index);
+
+        var table = document.getElementsByTagName("table")[0];
+        
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+           
+        td.innerHTML = "제목";
+        tr.appendChild(td);
+    
+        td = document.createElement("td");
+        td.innerHTML = "<input type='text' name='title' value='테스트"+index+"'>";
+        tr.appendChild(td);
+        table.appendChild(tr);
+
+        tr = document.createElement("tr");
+        td = document.createElement("td");
+        td.innerHTML = "작성자";
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = "<input type='text' name='writer' value='작성자"+index+"'>";
+        tr.appendChild(td);
+        table.appendChild(tr);
+   
+        tr = document.createElement("tr");
+        td = document.createElement("td");
+        td.innerHTML = "내용";
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = "<textarea name='content' id='content' cols='30' rows='10'>대한민국 만세</textarea>";
+        tr.appendChild(td);
+        table.appendChild(tr);
+    }
+</script>
+</html>

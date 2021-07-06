@@ -45,12 +45,14 @@
         }
         function regBoard(){
             var boardDate = new Date();
+            var date1 =boardDate.toLocaleDateString();
+            var date2 =boardDate.toLocaleTimeString();
             var b = document.getElementById('boardInput');
             let eachBoard = {
                 name : b.name.value,
                 title : b.title.value,
                 contents : b.contents.value,
-                date : boardDate
+                date : date1+' '+date2
             }
             boardList[index] =eachBoard;
             localStorage.setItem('boardInfo',JSON.stringify(boardList));

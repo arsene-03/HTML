@@ -1,0 +1,31 @@
+    function modify(){
+        var title = document.frm.title.value.length;
+        var writer = document.frm.writer.value.length;
+        
+        if(title==0){
+            alert("제목을 입력해주세요");
+        }else if(writer==0){
+            alert("작성자를 입력해 주세요");
+        }else{
+            alert("게시글이 수정되었습니다.");
+        }
+    }
+    function remove(){
+        var con =confirm("정말 삭제하시겠습니까?");
+        if(con==true){
+            alert("게시물이 삭제되었습니다.");
+        }
+    }
+    function writeBoard(){
+        var title = document.frm.title.value.length;
+        var writer = document.frm.writer.value.length;
+        
+        if(title==0){
+            alert("제목을 입력해주세요");
+        }else if(writer==0){
+            alert("작성자를 입력해 주세요");
+        }else{
+            alert("게시글 작성을 완료했습니다.");
+            location.href='board.html';
+        }
+    }

@@ -25,4 +25,5 @@ ul{
 }
 span,strong,b{
     font-size: xx-large;
+    height: 0vh;
 }

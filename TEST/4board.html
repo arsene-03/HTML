@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유게시판 페이지</title>
+    <link rel="stylesheet" href="./css/all.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+    </style>
+    <script src="./script/script"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="pageTitle">자유 게시판</div>
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="5boardInfo.html?index=1">테스트1</a></td>
+                <td>작성자1</td>
+                <td>2020.10.24</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="5boardInfo.html?index=2">테스트2</a></td>
+                <td>작성자2</td>
+                <td>2020.10.24</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="5boardInfo.html?index=3">테스트3</a></td>
+                <td>작성자3</td>
+                <td>2020.10.24</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="5boardInfo.html?index=4">테스트4</a></td>
+                <td>작성자4</td>
+                <td>2020.10.24</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="5boardInfo.html?index=5">테스트5</a></td>
+                <td>작성자5</td>
+                <td>2020.10.24</td>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    << 1,2,3,4,5, >>
+                </th>
+            </tr>
+        </table>
+        <input type="button" value="글작성" onclick="location.href='writeBoard.html'">
+        <input type="button" value="목록으로돌아가기" onclick="location.href='board.html'">
+    </div>
+</body>
+</html>

@@ -8,6 +8,9 @@ body{
     width: 90vh;
     background-color: chartreuse;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 .pageTitle{
     text-align: center;
@@ -60,4 +63,15 @@ table {
 }
 .subBox textarea{
     width: 100%;
+}
+img{
+    width: 120px;
+    height: 120px;
+}
+table, tr, td {
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+td{
+    padding: 10px;
 }
