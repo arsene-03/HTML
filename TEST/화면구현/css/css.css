@@ -1,0 +1,143 @@
+* {
+    font-family: 'Gugi', cursive;
+    margin: 0 auto;
+}
+body{
+    background-color: #D7FFF1;
+}
+a{
+    text-decoration: none;
+}
+header {
+    background-color: #77AF9C;
+    color:whitesmoke;
+    height: 12vh;
+    text-align: center;
+    line-height: 12vh;
+}
+nav {
+    background-color: #285943;
+    height: 5vh;
+    line-height: 5vh;
+}
+nav ul li{
+    display: inline;
+    margin-right: 50px;
+}
+nav a{
+    color: white;
+}
+#wrap {
+    margin: 30px auto;
+    border: 5px solid #285943;
+    min-height: 70vh;
+    width: 150vh;
+    background-color: #8CD790;
+    text-align: right;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+.pageTitle {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
+.buts {
+    top: 1000px;
+    margin: 50px auto;
+    height: 5vh;
+    width: 15vh;
+    background-color: #3F4B3B;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+.inputBox {
+    background-color: #3F4B3B;
+    border: none;
+    border-radius: 5px;
+    height: 5vh;
+    width: 30vh;
+    color: white;
+    padding-left: 3%;
+}
+fieldset {
+    display: inline;
+    margin-top: 30px;
+    text-align: center;
+    border: 3px solid #285943;
+    width: 35vh;
+    height: 330px;
+}
+fieldset .inputBox {
+    height: 20px;
+    width: 30vh;
+    margin: 5px 10px;
+}
+fieldset hr{
+    border: 1px solid white;
+}
+#signuptable {
+    border: none;
+    width: auto;
+}
+#signuptable td, #signuptable tr{
+    border: none;
+    width: auto;
+}
+table, tr, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+table{
+    border: 3px solid #285943;
+    width: 100vh;
+}
+td a{
+    color: black;
+}
+td a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+td .inputBox{
+    width: 60%;
+    margin: 3px auto;
+}
+textarea{
+    background-color: #3F4B3B;
+    margin: 3px auto;
+    padding-left: 3%;
+    padding-top: 3%;
+    color: white;
+}
+#logtb {
+    border: none;
+}
+#logtb td, #logtb tr{
+    border: none;
+}
+img{
+    margin-top: 8px;
+    width: 20vh;
+    height: 20vh;
+}
+select{
+    background-color: #3F4B3B;
+    border: none;
+    border-radius: 5px;
+    height: 3vh;
+    width: 20vh;
+    color: white;
+    padding-left: 3%;
+    text-align: center;
+}
+#gugudan{
+    height: 5vh;
+}
+#table{
+    width: 50vh;
+}

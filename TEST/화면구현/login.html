@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+</head>
+<link rel="stylesheet" href="./css/css.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+</style>
+<body>
+    <header><h1>화면 구현 포트폴리오 평가</h1></header>
+    <nav>
+        <ul>
+            <li><a href="./boardList.html">자유게시판</a></li>
+            <li><a href="./imgBoardList.html">이미지게시판</a></li>
+            <li><a href="./main.html">메인화면으로</a></li>
+        </ul>
+    </nav>
+    <div id="wrap">
+        <div class="pageTitle">로그인</div>
+        <form action="./main.html?login=y" method="post" name="frm">
+            <table id="logtb">
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" class="inputBox" name="userId" required></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password" class="inputBox" name="userPwd" required></td>
+                </tr>
+            </table>
+            <div>
+                <input type="submit" class ="buts" value="확인">
+                        <input type="reset" class ="buts" value="취소">
+                        <input type="button" class ="buts" value="회원가입" onclick="location.href='signup.html'">
+            </div>
+            
+        </form>
+        
+    </div>
+</body>
+</html>

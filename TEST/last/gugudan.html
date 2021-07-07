@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+    <div id="wrap">
+        <div class="pageTitle">구구단 출력</div>
+        <form action="#" method="get" id="dan">
+        <select name="gugudan" id="gugudan">
+            <option value="2">2단</option>
+            <option value="3">3단</option>
+            <option value="4">4단</option>
+            <option value="5">5단</option>
+            <option value="6">6단</option>
+            <option value="7">7단</option>
+            <option value="8">8단</option>
+            <option value="9">9단</option>
+        </select>
+        <input type="button" value="result" onclick="play()">
+        </form>
+        <table border="1" id="table">
+
+        </table>
+    </div>
+</body>
+<script>
+    function play(){
+        
+
+        var table = document.getElementById("table");
+        
+        var dtr = document.getElementsByClassName("aa")[0];
+
+        if(dtr != null){
+            dtr.remove();
+        }
+
+        var dan = parseInt(document.getElementById("gugudan").value);
+        console.log(dan);
+        var gugudan = "";
+    
+        var tr = document.createElement("tr");
+        tr.classList.add("aa");
+        console.log(table.hasAttribute("id"))
+        if(table.hasAttribute("id")) {
+            document.getElementsByTagName("td").remove;
+            
+        }
+        
+        var td = document.createElement("td");
+        
+        gugudan += (dan+"단 <br>");
+            for(var i=2;i<10;i++){
+                gugudan += (dan+"X"+i+"="+(dan*i)+"<br>");
+            }
+            td.innerHTML = gugudan;
+            tr.appendChild(td);
+            table.appendChild(tr);
+    }
+</script>
+</html>
+

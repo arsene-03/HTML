@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성 페이지</title>
+</head>
+<script src="./script/script"></script>
+<script src="./script/script"></script>
+<link rel="stylesheet" href="./css/css.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+</style>
+<body>
+    <header><h1>화면 구현 포트폴리오 평가</h1></header>
+    <nav>
+        <ul>
+            <li><a href="./boardList.html">자유게시판</a></li>
+            <li><a href="./imgBoardList.html">이미지게시판</a></li>
+            <li><a href="./main.html">메인화면으로</a></li>
+        </ul>
+    </nav>
+    <div id="wrap">
+        <div class="pageTitle">게시글 작성</div>
+        <form action="./boardList.html" method="get" name="frm">
+            <table>
+                <tr>
+                    <td>제목</td>
+                    <td><input type='text' class="inputBox" name='title' required></td>
+                </tr>
+                <tr>
+                    <td>작성자</td>
+                    <td><input type='text' class="inputBox" name='writer' required></td>
+                </tr>
+                <tr>
+                    <td>내용</td>
+                    <td><textarea name='content' id='content'  cols='60%' rows='10'></textarea></td>
+                </tr>
+            </table>
+            <div>
+                <input type="button" class="buts" value="등록" onclick="writeBoard()">
+                <input type="reset" class="buts" value="다시작성" >
+                <input type="button" class="buts" value="목록보기" onclick="backList()">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

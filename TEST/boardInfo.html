@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 상세보기 페이지</title>
+</head>
+<script src="./script/script"></script>
+<link rel="stylesheet" href="./css/css.css">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+</style>
+
+<body>
+    <header><h1>화면 구현 포트폴리오 평가</h1></header>
+    <nav>
+        <ul>
+            <li><a href="./boardList.html">자유게시판</a></li>
+            <li><a href="./imgBoardList.html">이미지게시판</a></li>
+            <li><a href="./main.html">메인화면으로</a></li>
+        </ul>
+    </nav>
+    <div id="wrap">
+        <div class="pageTitle">게시글 상세보기</div>
+        <form action="./board.html" method="get" name="frm">
+        <table>
+        </table>
+        <div>
+            <input type="button" class="buts" value="게시글 수정" onclick="modify()">
+            <input type="button" class="buts" value="게시글 삭제" onclick= "removeBoard()">
+            <input type="button" class="buts" value="목록보기" onclick="backList()">
+        </div>
+    </form>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var index = location.href.split('=')[1];
+        console.log(index);
+
+        var table = document.getElementsByTagName("table")[0];
+        
+        var tr = document.createElement("tr");
+        var td = document.createElement("td");
+           
+        td.innerHTML = "제목";
+        tr.appendChild(td);
+    
+        td = document.createElement("td");
+        td.innerHTML = "<input type='text' name='title' class='inputBox' value='테스트"+index+"' readonly>";
+        tr.appendChild(td);
+        table.appendChild(tr);
+
+        tr = document.createElement("tr");
+        td = document.createElement("td");
+        td.innerHTML = "작성자";
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = "<input type='text' name='writer' class='inputBox' value='작성자"+index+"' readonly>";
+        tr.appendChild(td);
+        table.appendChild(tr);
+   
+        tr = document.createElement("tr");
+        td = document.createElement("td");
+        td.innerHTML = "작성일";
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = "<input type='text' name='date' class='inputBox' value='2020.10.24' readonly>";
+        tr.appendChild(td);
+        table.appendChild(tr);
+
+        tr = document.createElement("tr");
+        td = document.createElement("td");
+        td.innerHTML = "조회수";
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+        td.innerHTML = "<input type='text' name='hits' class='inputBox'value='1' readonly>";
+        tr.appendChild(td);
+        table.appendChild(tr);
+    }
+</script>
+</html>
